@@ -6,7 +6,8 @@ Information for use this repository:
 1) Clone or download the repository from link: https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar.git
 2) Workspace: Ubuntu 16.04, ROS Kinetic Kame
 
-Repository index:
+Repository :
+
 /AuE893Spring20_VipulKumbhar
   README.md
   Resume.pdf
