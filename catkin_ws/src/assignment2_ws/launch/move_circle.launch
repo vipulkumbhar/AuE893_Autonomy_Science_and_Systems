@@ -3,6 +3,6 @@
   <node pkg="turtlesim" name="sim" type="turtlesim_node"/>
   <param name ="/circle_radius_param" type="double" value="2.0" />
   
-  <node name = "robot_cleaner" pkg="turtlesim_circle" type="move_circle.py" />
+  <node name = "robot_cleaner" pkg="assignment2_ws" type="move_circle.py" />
 
 </launch>
