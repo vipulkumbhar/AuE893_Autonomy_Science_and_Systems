@@ -21,8 +21,9 @@ def move_circle():
 
     #Receiveing the user's input
     print("Let's move robot in circular motion")
- 
-    circle_radius = 2
+
+    circle_radius = rospy.get_param("/circle_radius_param")
+    #circle_radius = 2
     turtlespeed   = 0.5
     #Since we are moving just in x-axis
     vel_msg.linear.x = 0.5
