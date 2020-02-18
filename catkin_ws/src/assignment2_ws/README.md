@@ -4,6 +4,8 @@
 
 1) circle.py: Make the Turtle move in a circle with constant twist velocity  
   
+video path: catkin_ws/src/assignment2_ws/video/move_circle.MP4
+  
 2) square_openloop.py: Make the Turtle move in a square of 2x2 units with 0.2 linear velocity
 and 0.2 rad/s angular velocity.  
   
