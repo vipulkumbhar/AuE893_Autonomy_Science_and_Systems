@@ -8,6 +8,6 @@ This repository contains the code and assets for Clemson Univeristy course AuE89
 
 ### HW2
 Script      : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment2_ws/scripts       
-Video       : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment2_ws/video
-launch files: /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment2_ws/launch
+Video       : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment2_ws/video  
+launch files: /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment2_ws/launch  
 
