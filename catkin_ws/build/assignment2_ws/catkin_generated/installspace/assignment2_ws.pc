@@ -1,0 +1,8 @@
+prefix=/home/vipulkumbhar/catkin_ws/install
+
+Name: assignment2_ws
+Description: Description of assignment2_ws
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

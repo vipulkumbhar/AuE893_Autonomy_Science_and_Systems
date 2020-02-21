@@ -1,0 +1,2 @@
+assignment2_ws:assignment3:catkin_pkg:turtlebot3/turtlebot3:turtlebot3/turtlebot3_bringup:turtlebot3/turtlebot3_description:turtlebot3/turtlebot3_example:turtlebot3/turtlebot3_navigation:turtlebot3/turtlebot3_slam:turtlebot3/turtlebot3_teleop:turtlebot3_msgs:turtlebot3_simulations/turtlebot3_fake:turtlebot3_simulations/turtlebot3_gazebo:turtlebot3_simulations/turtlebot3_simulations:turtlesim_cleaner:tutorials
+-DCATKIN_DEVEL_PREFIX=/home/vipulkumbhar/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/vipulkumbhar/catkin_ws/install -G Unix Makefiles

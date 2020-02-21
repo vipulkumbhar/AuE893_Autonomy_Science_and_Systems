@@ -1,0 +1,8 @@
+prefix=/home/vipulkumbhar/catkin_ws/devel
+
+Name: catkin_pkg
+Description: Description of catkin_pkg
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

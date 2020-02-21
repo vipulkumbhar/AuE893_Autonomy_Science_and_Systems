@@ -1,0 +1,10 @@
+<launch>
+
+   
+  <param name ="/number_publish_freq" type="double" value="1.0" />
+  <param name ="/number_to_publish" type="int" value="10" />
+  
+  <node name = "number_publisher" pkg="tutorials" type="number_publish2.py" />
+  <node name = "number_counter" pkg="tutorials" type="number_sub.py" />
+
+</launch>
