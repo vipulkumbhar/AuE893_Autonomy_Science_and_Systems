@@ -12,14 +12,3 @@ link: https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/ca
 Script      : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment2_ws/scripts       
 Video       : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment2_ws/video  
 Launch files: /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment2_ws/launch  
-
-
-```python
-from typing import Iterator
-
-def fib(n: int) -> Iterator[int]:
-    a, b = 0, 1
-    while a < n:
-        yield a
-        a, b = b, a + b
-```
