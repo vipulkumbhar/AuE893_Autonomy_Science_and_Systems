@@ -1,8 +1,0 @@
-prefix=/home/vipulkumbhar/catkin_ws/devel
-
-Name: turtlebot3_description
-Description: Description of turtlebot3_description
-Version: 1.2.1
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: urdf xacro

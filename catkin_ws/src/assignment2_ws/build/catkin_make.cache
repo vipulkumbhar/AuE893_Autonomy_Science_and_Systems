@@ -1,2 +1,0 @@
-turtlesim_circle
--DCATKIN_DEVEL_PREFIX=/home/vipulkumbhar/assignment2_ws/devel -DCMAKE_INSTALL_PREFIX=/home/vipulkumbhar/assignment2_ws/install -G Unix Makefiles
