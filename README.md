@@ -12,4 +12,3 @@ link: https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/ca
 Script      : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment2_ws/scripts       
 Video       : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment2_ws/video  
 Launch files: /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment2_ws/launch  
-
