@@ -9,12 +9,16 @@ This repository contains the code and assets for Clemson Univeristy course AuE89
 ### HW2
 link: https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment2_ws 
 
+<pre>
 Script      : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment2_ws/scripts       
 Video       : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment2_ws/video  
-Launch files: /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment2_ws/launch  
+Launch files: /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment2_ws/launch 
+</pre>
 
 ### HW3
 link: https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment3  
-  
+
+<pre>
 Script      : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment3/scripts 
+</pre>
 
