@@ -24,7 +24,7 @@ def move():
      print('move function has been initiated')
      pub = rospy.Publisher('/turtle1/cmd_vel', Twist, queue_size =10)
      vel_msg = Twist() 
-     rate = rospy.Rate(10)
+     rate = rospy.Rate(30)
      
      square_side    = 20
      turtle_speed   = 0.5
@@ -66,7 +66,7 @@ def rotate(yaw_input):
      pub = rospy.Publisher('/turtle1/cmd_vel', Twist, queue_size =10)
      vel_msg = Twist()
  
-     rate     = rospy.Rate(20)
+     rate     = rospy.Rate(30)
      yaw_rate = 0.5               #in rad/sec
      angle    = yaw_input         #90*(2*PI/360)
  
@@ -109,7 +109,7 @@ def gotogoal(goal_x,goal_y, speed):
 
      pose_subscriber = rospy.Subscriber('/turtle1/pose', Pose, poseCallback)
      pose = Pose()
-     rate = rospy.Rate(10)
+     rate = rospy.Rate(30)
  
      vel_msg.linear.y  = 0
      vel_msg.linear.z  = 0
@@ -122,7 +122,7 @@ def gotogoal(goal_x,goal_y, speed):
      
      while not rospy.is_shutdown():
            #t0 = float(rospy.Time.now().to_sec())
-           while (sqrt(pow((goal_x - pos_x), 2) + pow((goal_y - pos_y), 2))) > distance_tolerance:
+           while (sqrt(pow((goal_x - pos_x), 2) + pow((goal_y - pos_y), 2))) >= distance_tolerance:
 
                   distance = abs(math.sqrt(((goal_x-pos_x) ** 2) + ((goal_y-pos_y) ** 2)))
                   vel_msg.linear.x = speed*0.5 * distance

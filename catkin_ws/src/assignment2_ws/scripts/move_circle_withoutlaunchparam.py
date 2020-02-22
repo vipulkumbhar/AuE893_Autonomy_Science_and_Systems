@@ -11,7 +11,7 @@ def pose_callback(pose):
     
 def move_circle():
     # Starts a new node
-    rospy.init_node('robot_cleaner', anonymous=True)
+    rospy.init_node('robot_cleaner_34', anonymous=True)
     velocity_publisher = rospy.Publisher('/turtle1/cmd_vel', Twist, queue_size=10)
     vel_msg = Twist()
 

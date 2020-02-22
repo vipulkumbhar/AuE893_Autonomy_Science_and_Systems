@@ -1,8 +1,9 @@
 <launch>
 
-  <node pkg="turtlesim" name="sim" type="turtlesim_node"/>
+  <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node"  />
+
   <param name ="/circle_radius_param" type="double" value="2.0" />
-  
-  <node name = "robot_cleaner" pkg="assignment2_ws" type="move_circle.py" />
+
+  <node pkg="assignment2_ws" type="move_circle.py" name="robot_cleaner"  />
 
 </launch>

@@ -4,14 +4,14 @@ from geometry_msgs.msg import Twist
 from turtlesim.msg import Pose
 
 def pose_callback(pose):
-    
+
     X_cord = pose.x
     Y_cord = pose.y
     rospy.loginfo(X_cord)
-    
+
 def move_circle():
     # Starts a new node
-    rospy.init_node('robot_cleaner', anonymous=True)
+    rospy.init_node('robot_cleaner')
     velocity_publisher = rospy.Publisher('/turtle1/cmd_vel', Twist, queue_size=10)
     vel_msg = Twist()
 
@@ -32,7 +32,7 @@ def move_circle():
     vel_msg.angular.x = 0
     vel_msg.angular.y = 0
     vel_msg.angular.z = turtlespeed/circle_radius
-    
+
     while not rospy.is_shutdown():
         velocity_publisher.publish(vel_msg)
         rate.sleep()
