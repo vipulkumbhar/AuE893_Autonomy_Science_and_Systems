@@ -14,6 +14,7 @@ Video       : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment2_ws/video
 Launch files: /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment2_ws/launch  
 
 ### HW3
-link: https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment3
+link: https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment3  
+  
 Script      : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment3/scripts 
 
