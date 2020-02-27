@@ -7,4 +7,5 @@
 # new environment variables
 
 # modified environment variables
+export PATH="/opt/ros/kinetic/bin:/home/vipulkumbhar/anaconda2/bin:/home/vipulkumbhar/anaconda2/condabin:/home/vipulkumbhar/bin:/home/vipulkumbhar/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 export PWD="/home/vipulkumbhar/catkin_ws/build"

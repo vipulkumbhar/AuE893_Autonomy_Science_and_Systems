@@ -1,0 +1,4 @@
+int64 a  #service input
+int64 b
+---
+int64 sum   #service output

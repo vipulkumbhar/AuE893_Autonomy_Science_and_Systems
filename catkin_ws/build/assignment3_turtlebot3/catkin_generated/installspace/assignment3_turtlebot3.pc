@@ -1,0 +1,8 @@
+prefix=/home/vipulkumbhar/catkin_ws/install
+
+Name: assignment3_turtlebot3
+Description: Description of assignment3_turtlebot3
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
