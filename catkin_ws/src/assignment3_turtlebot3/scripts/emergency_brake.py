@@ -17,7 +17,7 @@ def callback(data):
 	z = (y[len(y)/2] + y[(len(y)/2) - 1])/2
 	print(z)
 
-	if z < 1:
+	if z < 0.3:
 		flag = 1
 	#print(len(y))
 
@@ -31,7 +31,7 @@ def tmnt_controller():
 	scan_subscriber = rospy.Subscriber('/scan', LaserScan, callback)
 	rate = rospy.Rate(10) # 1hz
 
-	vel_msg = Twist(Vector3(0.75,0,0), Vector3(0,0,0))
+	vel_msg = Twist(Vector3(0.5,0,0), Vector3(0,0,0))
 
 	while not rospy.is_shutdown() and flag==0:
 		#rospy.loginfo(vel_msg)

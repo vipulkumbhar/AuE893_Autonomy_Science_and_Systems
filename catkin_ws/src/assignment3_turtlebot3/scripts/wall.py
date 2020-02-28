@@ -12,12 +12,17 @@ def move():
     length = 999
     first=[]
     second=[]
+
     angles=5
     while length >= 1:
         scan = rospy.wait_for_message('scan',LaserScan)
+
         x=len(scan.ranges)
+
         for i in range(angles):
+
             first.append(scan.ranges[(angles-1)-i])
+
             second.append(scan.ranges[(x-1)-i])
 
         final_scan=first+second

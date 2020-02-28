@@ -17,7 +17,7 @@ def callback(data):
 	z = (y[len(y)/2] + y[(len(y)/2) - 1])/2
 	print(z)
 
-	if z < 1:
+	if z < 0.5:
 		flag = 1
 	#print(len(y))
 
