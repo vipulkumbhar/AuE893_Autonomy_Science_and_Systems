@@ -1524,6 +1524,24 @@ assignment3/preinstall:
 .PHONY : assignment3/preinstall
 
 #=============================================================================
+# Directory level rules for directory assignment4
+
+# Convenience name for "all" pass in the directory.
+assignment4/all:
+
+.PHONY : assignment4/all
+
+# Convenience name for "clean" pass in the directory.
+assignment4/clean:
+
+.PHONY : assignment4/clean
+
+# Convenience name for "preinstall" pass in the directory.
+assignment4/preinstall:
+
+.PHONY : assignment4/preinstall
+
+#=============================================================================
 # Directory level rules for directory catkin_pkg
 
 # Convenience name for "all" pass in the directory.
