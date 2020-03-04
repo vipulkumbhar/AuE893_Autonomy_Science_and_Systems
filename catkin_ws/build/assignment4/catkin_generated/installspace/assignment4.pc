@@ -1,0 +1,8 @@
+prefix=/home/vipulkumbhar/catkin_ws/install
+
+Name: assignment4
+Description: Description of assignment4
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
