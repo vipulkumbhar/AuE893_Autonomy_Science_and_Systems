@@ -36,7 +36,7 @@ $ roslaunch assignment4 turtlebot3_obstacleavoidance.launch    #for running squa
 ### Work Distribution
 
 <pre>
-Vipul Kumbhar 	: Wallfollowing and obstacle avoidance scripts and launch files  
+Vipul Kumbhar 	: Wallfollowing, obstacle avoidance scripts and launch files  
 Akshay Mahajan	:  
 Ashit Mohanty 	:  
 Manu Srivastava	:   
