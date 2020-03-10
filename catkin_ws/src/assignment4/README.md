@@ -12,4 +12,35 @@
   
 ### Launch Files  
   
-#### Part 1:  Launch file name: move.launch  
+#### Part 1:  Launch file name: turtlebot3_wallfollowing.launch  
+- a   
+	  
+- b
+
+The commands that need to be executed in the terminal are as follows:
+
+```
+$ roslaunch assignment4 turtlebot3_wallfollowing.launch    #for running square.py
+
+```
+#### Part 2:  Launch file name: turtlebot3_obstacleavoidance.launch  
+- a   
+	  
+- b
+
+The commands that need to be executed in the terminal are as follows:
+
+```
+$ roslaunch assignment4 turtlebot3_obstacleavoidance.launch    #for running square.py
+
+```
+
+### Work Distribution
+
+<pre>
+Vipul Kumbhar 	: Wallfollowing and obstacle avoidance scripts and launch files  
+Akshay Mahajan	:  
+Ashit Mohanty 	:  
+Manu Srivastava	:   
+Siddhesh Bagkar	:  
+</pre>
