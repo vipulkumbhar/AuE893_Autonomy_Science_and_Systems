@@ -13,9 +13,9 @@
 ### Launch Files  
   
 #### Part 1:  Launch file name: turtlebot3_wallfollowing.launch  
-- a   
+- Script info:   
 	  
-- b
+- Launch info:
 
 The commands that need to be executed in the terminal are as follows:
 
@@ -26,9 +26,9 @@ $ roslaunch assignment4 turtlebot3_wallfollowing.launch
   
   
 #### Part 2:  Launch file name: turtlebot3_obstacleavoidance.launch  
-- a   
+- Script info:   
 	  
-- b
+- Launch info:
 
 The commands that need to be executed in the terminal are as follows:
 
