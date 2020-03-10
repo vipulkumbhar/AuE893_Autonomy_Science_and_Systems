@@ -27,7 +27,7 @@ $ roslaunch assignment3_turtlebot3 move.launch code:=circle    #for running circ
 ```
 
 
-![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/assignment4/video/wall_following.gif)
+![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/git_readme_files/move.gif)
       
  
 #### Part 2:  Launch file name: emergency_braking.launch
