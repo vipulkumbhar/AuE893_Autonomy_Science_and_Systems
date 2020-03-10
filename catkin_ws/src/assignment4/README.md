@@ -20,7 +20,7 @@
 The commands that need to be executed in the terminal are as follows:
 
 ```
-$ roslaunch assignment4 turtlebot3_wallfollowing.launch        #for running square.py
+$ roslaunch assignment4 turtlebot3_wallfollowing.launch       
 ```
 ![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/assignment4/video/wall_following.gif)
   
@@ -33,7 +33,7 @@ $ roslaunch assignment4 turtlebot3_wallfollowing.launch        #for running squa
 The commands that need to be executed in the terminal are as follows:
 
 ```
-$ roslaunch assignment4 turtlebot3_obstacleavoidance.launch    #for running square.py
+$ roslaunch assignment4 turtlebot3_obstacleavoidance.launch    
 ```
 ![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/assignment4/video/obstacle_avoidance.gif)
 
