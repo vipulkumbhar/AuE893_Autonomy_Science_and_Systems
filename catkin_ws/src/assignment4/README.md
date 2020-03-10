@@ -13,7 +13,7 @@
 ### Launch Files  
   
 #### Part 1:  Launch file name: turtlebot3_wallfollowing.launch  
-- Script info:   
+- Script info :   
 	  
 - Launch info:
 
@@ -26,7 +26,7 @@ $ roslaunch assignment4 turtlebot3_wallfollowing.launch
   
   
 #### Part 2:  Launch file name: turtlebot3_obstacleavoidance.launch  
-- Script info:   
+- Script info :   
 	  
 - Launch info:
 
