@@ -21,7 +21,6 @@ The commands that need to be executed in the terminal are as follows:
 
 ```
 $ roslaunch assignment4 turtlebot3_wallfollowing.launch    #for running square.py
-
 ```
 #### Part 2:  Launch file name: turtlebot3_obstacleavoidance.launch  
 - a   
@@ -32,7 +31,6 @@ The commands that need to be executed in the terminal are as follows:
 
 ```
 $ roslaunch assignment4 turtlebot3_obstacleavoidance.launch    #for running square.py
-
 ```
 
 ### Work Distribution
