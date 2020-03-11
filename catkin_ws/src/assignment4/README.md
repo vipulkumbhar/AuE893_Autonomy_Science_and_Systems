@@ -17,7 +17,7 @@
 	  
 - Launch info:
 
-The commands that need to be executed in the terminal are as follows:
+The commands that need to be executed in the terminal for gazebo simulation are as follows:
 
 ```
 $ roslaunch assignment4 turtlebot3_wallfollowing.launch       
@@ -32,7 +32,7 @@ $ roslaunch assignment4 turtlebot3_wallfollowing.launch
 	  
 - Launch info:
 
-The commands that need to be executed in the terminal are as follows:
+The commands that need to be executed in the terminal for gazebo simulation are as follows:
 
 ```
 $ roslaunch assignment4 turtlebot3_obstacleavoidance.launch    
