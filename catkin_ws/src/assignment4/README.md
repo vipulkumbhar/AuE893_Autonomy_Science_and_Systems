@@ -35,7 +35,7 @@ The commands that need to be executed in the terminal are as follows:
 ```
 $ roslaunch assignment4 turtlebot3_obstacleavoidance.launch    
 ```
-![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/assignment4/video/obstacle_avoidance.gif)
+![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/assignment4/video/gazebo/obstacle_avoidance.gif)
 
 ![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/assignment4/video/turtlebot3burger/obstacleavoidance_real.gif)
 
