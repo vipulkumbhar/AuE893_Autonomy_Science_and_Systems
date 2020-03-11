@@ -50,9 +50,3 @@ Ashit Mohanty 	:
 Manu Srivastava	:   
 Siddhesh Bagkar	:  
 </pre>
-
-class: middle, center
-
-<video width="560" height="420" controls>
-    <source src="{{ site.baseurl }}/assets/video_example.mp4" type="video/mp4">
-</video>
