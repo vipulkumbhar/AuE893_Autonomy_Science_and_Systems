@@ -33,7 +33,13 @@ front obstacle and is capped from -0.1 to 0.4. This helps keep turtlebot speed l
 rotate maneuver and high during straight line path.
 </pre>
 	  
-- Launch info: This launch file first initializes the type of turtlebot. Here it has a default entry of burger. Next, the initial coordinates of the turtlebot have been defined. After that, set of commands launch the empty.world file in Gazebo and the dynamic parameters of the virtual world are initialized. After setting up environment and turtlebot, wallfollowing.py is run with 'assignment4' package. 
+- Launch info: 
+<pre>
+This launch file first initializes the type of turtlebot. Here it has a default entry of burger. Next,
+the initial coordinates of the turtlebot have been defined. After that, set of commands launch the
+empty.world file in Gazebo and the dynamic parameters of the virtual world are initialized. After 
+setting up environment and turtlebot, wallfollowing.py is run with 'assignment4' package. 
+</pre>
 
 The commands that need to be executed in the terminal for gazebo simulation are as follows:
 
