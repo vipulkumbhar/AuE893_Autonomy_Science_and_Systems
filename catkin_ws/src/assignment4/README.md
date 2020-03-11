@@ -15,8 +15,8 @@
 #### Part 1:  Launch file name: turtlebot3_wallfollowing.launch 
 
 - Script info: wallfollowing.py script is mainly divided in two parts    
-##### - 1) def Callback (data) : This callback fuctions reads data from subscribed topic '/scan'. It replaces 'inf' and false '0's and gives front wall distance(s_d), left wall distance (y_l), right wall distance (y_r) from predefined scan range.   
-##### - 2) def tmnt_controller(): tnmt controller subscribes to 'scan' data and gets desired values from callback function. it also publishes twist msg on topic '/cmd_vel'. For angular velocity in z direction, a PD (proportional derivative) controller is used which uses error term defined as ( distance to be maintained from wall - distance from wall). This error term and PD controller helps keep turtlebot path parallel to right side wall at predefined distance. Linear velocity is inversely proportional distance from front obstacle and is capped from -0.1 to 0.4. This helps keep turtlebot speed lower during corner turning maneuver and high during straight line path.
+1) def Callback (data) : This callback fuctions reads data from subscribed topic '/scan'. It replaces 'inf' and false '0's and gives front wall distance(s_d), left wall distance (y_l), right wall distance (y_r) from predefined scan range.   
+2) def tmnt_controller(): tnmt controller subscribes to 'scan' data and gets desired values from callback function. it also publishes twist msg on topic '/cmd_vel'. For angular velocity in z direction, a PD (proportional derivative) controller is used which uses error term defined as ( distance to be maintained from wall - distance from wall). This error term and PD controller helps keep turtlebot path parallel to right side wall at predefined distance. Linear velocity is inversely proportional distance from front obstacle and is capped from -0.1 to 0.4. This helps keep turtlebot speed lower during corner turning maneuver and high during straight line path.
 	  
 - Launch info: This launch file first initializes the type of turtlebot. Here it has a default entry of burger. Next, the initial coordinates of the turtlebot have been defined. After that, set of commands launch the empty.world file in Gazebo and the dynamic parameters of the virtual world are initialized. After setting up environment and turtlebot, wallfollowing.py is run with 'assignment4' package. 
 
@@ -36,7 +36,12 @@ $ rosrun assignment4 turtlebot3_wallfollowing.py
 
   
 #### Part 2:  Launch file name: turtlebot3_obstacleavoidance.launch  
-- Script info:   
+- Script info:  wallfollowing.py script is mainly divided in four parts.      
+
+1) def Callback (data) : This callback fuctions reads data from subscribed topic '/scan'. It replaces 'inf' and false '0's and gives front obstacle distance(y_l), left obstacle distance (l_l), right obstacle distance (r_l) and back side obstacle distance (y_b) from predefined scan range.    
+2) wander_controller_move(): this function is mainly used for straight line maneuvers. Linear velocity is proportional to difference between front obstacle(y_l) and front safe distance (front_limit). It is controlled by prportional gain of 1/5 and is capped between -0.2 to 0.5. it also added angular velocity opposite object detected in right or left side provided that front obstacle distance is greater than front safe limit. If front obstacle distance is lower than front safe limit, this functions breaks and call wander_controller_rotate() function.   
+3) wander_controller_rotate(): this functions rotates the turtlebot until front obstacle distance is greater than safe limit and also if there are not any obstacle in immediate front-left or front-right vicinity. If these conditions are satisfied then the functions breaks and calls wander_controller_move() function.
+4) stuck(): If turtlebots front obstacle distance or back side obstacle distance is lower than safe limit and there is not place to rotate then these situations calls stuck() functoin. Which publishes negative or positive linear velocity until there is enough space for turtlebot to rotate.
 	  
 - Launch info: This launch file first initializes the type of turtlebot. Here it has a default entry of burger. Next, the initial coordinates of the turtlebot have been defined. After that, set of commands launch the empty.world file in Gazebo and the dynamic parameters of the virtual world are initialized. After setting up environment and turtlebot, wanderfast.py is run with 'assignment4' package. 
 
