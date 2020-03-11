@@ -24,6 +24,11 @@ $ roslaunch assignment4 turtlebot3_wallfollowing.launch
 ```
 ![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/assignment4/video/gazebo/wall_following.gif)
 
+The commands that need to be executed in the terminal for turtlebot3 burger run are as follows:
+
+```
+$ rosrun assignment4 turtlebot3_wallfollowing.py       
+```
 ![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/assignment4/video/turtlebot3burger/wallfollowing_real.gif)
 
   
