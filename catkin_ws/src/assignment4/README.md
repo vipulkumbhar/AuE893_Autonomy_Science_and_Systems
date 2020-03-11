@@ -15,7 +15,7 @@
 #### Part 1:  Launch file name: turtlebot3_wallfollowing.launch 
 
 - Script info: wallfollowing.py script is mainly divided in two parts    
-1) def Callback (data) : 
+1) Callback(data) : 
 <pre>
 This callback fuctions reads data from subscribed topic '/scan'. It replaces 'inf' and false '0's 
 and gives front wall distance(s_d), left wall distance (y_l), right wall distance (y_r) from pre-
@@ -60,7 +60,7 @@ $ rosrun assignment4 turtlebot3_wallfollowing.py
 #### Part 2:  Launch file name: turtlebot3_obstacleavoidance.launch  
 - Script info:  wallfollowing.py script is mainly divided in four parts.      
 
-1) def Callback (data) : 
+1) Callback(data) : 
 <pre>
 This callback fuctions reads data from subscribed topic '/scan'. It replaces 'inf' and false '0's 
 and gives front obstacle distance(y_l), left obstacle distance (l_l), right obstacle distance (r_l)
