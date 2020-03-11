@@ -60,7 +60,12 @@ $ rosrun assignment4 turtlebot3_wallfollowing.py
 #### Part 2:  Launch file name: turtlebot3_obstacleavoidance.launch  
 - Script info:  wallfollowing.py script is mainly divided in four parts.      
 
-1) def Callback (data) : This callback fuctions reads data from subscribed topic '/scan'. It replaces 'inf' and false '0's and gives front obstacle distance(y_l), left obstacle distance (l_l), right obstacle distance (r_l) and back side obstacle distance (y_b) from predefined scan range.    
+1) def Callback (data) : 
+<pre>
+This callback fuctions reads data from subscribed topic '/scan'. It replaces 'inf' and false '0's 
+and gives front obstacle distance(y_l), left obstacle distance (l_l), right obstacle distance (r_l)
+and back side obstacle distance (y_b) from predefined scan range.  
+</pre>
 2) wander_controller_move(): this function is mainly used for straight line maneuvers. Linear velocity is proportional to difference between front obstacle(y_l) and front safe distance (front_limit). It is controlled by prportional gain of 1/5 and is capped between -0.2 to 0.5. it also added angular velocity opposite object detected in right or left side provided that front obstacle distance is greater than front safe limit. If front obstacle distance is lower than front safe limit, this function breaks and call wander_controller_rotate() function.   
 3) wander_controller_rotate(): this functions rotates the turtlebot until front obstacle distance is greater than safe limit and also if there are not any obstacle in immediate front-left or front-right vicinity. If these conditions are satisfied then the function breaks and calls wander_controller_move() function.
 4) stuck(): If turtlebots front obstacle distance or back side obstacle distance is lower than safe limit and there is not place to rotate then these situations calls stuck() function. Which publishes negative or positive linear velocity until there is enough space for turtlebot to rotate.
