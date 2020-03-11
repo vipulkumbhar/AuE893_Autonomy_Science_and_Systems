@@ -44,6 +44,12 @@ $ roslaunch assignment4 turtlebot3_obstacleavoidance.launch
 ```
 ![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/assignment4/video/gazebo/obstacle_avoidance.gif)
 
+The commands that need to be executed in the terminal for turtlebot3 burger run are as follows:
+
+```
+$ rosrun assignment4 turtlebot3_wander.py       
+```
+
 ![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/assignment4/video/turtlebot3burger/obstacleavoidance_real.gif)
 
 ### Work Distribution
