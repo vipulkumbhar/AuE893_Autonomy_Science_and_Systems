@@ -63,8 +63,8 @@ $ rosrun assignment4 turtlebot3_wallfollowing.py
 1) Callback(data) : 
 <pre>
 This callback fuctions reads data from subscribed topic '/scan'. It replaces 'inf' and false '0's 
-and gives front obstacle distance(y_l), left obstacle distance (l_l), right obstacle distance (r_l)
-and back side obstacle distance (y_b) from predefined scan range.  
+and gives front obstacle distance(y_l), left obstacle distance (l_l), right obstacle distance 
+(r_l) and back side obstacle distance (y_b) from predefined scan range.  
 </pre>
 2) wander_controller_move(): 
 <pre>
@@ -72,8 +72,8 @@ This function is mainly used for straight line maneuvers. Linear velocity is pro
 difference between front obstacle(y_l) and front safe distance (front_limit). It is controlled by 
 prportional gain of 1/5 and is capped between -0.2 to 0.5. it also added angular velocity opposite 
 object detected in right or left side provided that front obstacle distance is greater than front 
-safe limit. If front obstacle distance is lower than front safe limit, this function breaks and call
-wander_controller_rotate() function.  
+safe limit. If front obstacle distance is lower than front safe limit, this function breaks and 
+call wander_controller_rotate() function.  
 </pre>
 3) wander_controller_rotate(): 
 <pre>
@@ -84,16 +84,17 @@ conditions are satisfied then the function breaks and calls wander_controller_mo
 4) stuck(): 
 <pre>
 If turtlebots front obstacle distance or back side obstacle distance is lower than safe limit and 
-there is not place to rotate then these situations calls stuck() function. Which publishes negative  
-or positive linear velocity until there is enough space for turtlebot to rotate.
+there is not place to rotate then these situations calls stuck() function. Which publishes 
+negative or positive linear velocity until there is enough space for turtlebot to rotate.
 </pre>
 	  
 - Launch info: 
 <pre>
 This launch file first initializes the type of turtlebot. Here it has a default entry of burger. 
-Next, the initial coordinates of the turtlebot have been defined. After that, set of commands launch
-the empty.world file in Gazebo and the dynamic parameters of the virtual world are initialized. 
-After setting up environment and turtlebot, wanderfast.py is run with 'assignment4' package. 
+Next, the initial coordinates of the turtlebot have been defined. After that, set of commands 
+launch the empty.world file in Gazebo and the dynamic parameters of the virtual world are 
+initialized. After setting up environment and turtlebot, wanderfast.py is run with 'assignment4'
+package. 
 </pre>
 
 The commands that need to be executed in the terminal for gazebo simulation are as follows:
