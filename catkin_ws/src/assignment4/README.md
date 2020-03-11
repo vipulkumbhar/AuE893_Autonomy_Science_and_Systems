@@ -62,7 +62,7 @@ $ rosrun assignment4 turtlebot3_wander.py
 
 ### File locations:
 #### - [Launch files](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment4/launch)     
-#### - Script files - [for gazebo](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment4/script)   - [for turtlebot3 burger](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment4/src)      
+#### - Script files - [1) Gazebo](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment4/script)   - [2) Turtlebot3 burger](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment4/src)      
 #### - [Videos](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment4/video)
 
 ### Work Distribution
