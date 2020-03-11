@@ -51,5 +51,8 @@ Manu Srivastava	:
 Siddhesh Bagkar	:  
 </pre>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5eLcHJLDlI8" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+class: middle, center
 
+<video width="560" height="420" controls>
+    <source src="{{ site.baseurl }}/assets/video_example.mp4" type="video/mp4">
+</video>
