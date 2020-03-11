@@ -37,7 +37,7 @@ $ roslaunch assignment4 turtlebot3_obstacleavoidance.launch
 ```
 ![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/assignment4/video/obstacle_avoidance.gif)
 
-https://www.youtube.com/watch?v=dYj9JBRLT2M
+![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/assignment4/video/turtlebot3burger/obstacleavoidance_real.gif)
 
 ### Work Distribution
 
