@@ -22,8 +22,10 @@ The commands that need to be executed in the terminal are as follows:
 ```
 $ roslaunch assignment4 turtlebot3_wallfollowing.launch       
 ```
-![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/assignment4/video/wall_following.gif)
-  
+![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/assignment4/video/gazebo/wall_following.gif)
+
+![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/assignment4/video/turtlebot3burger/wallfollowing_real.gif)
+
   
 #### Part 2:  Launch file name: turtlebot3_obstacleavoidance.launch  
 - Script info:   
