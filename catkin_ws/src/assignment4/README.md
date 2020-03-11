@@ -22,7 +22,16 @@ and gives front wall distance(s_d), left wall distance (y_l), right wall distanc
 -defined scan range. 
 </pre>
 
-2) def tmnt_controller(): tnmt controller subscribes to 'scan' data and gets desired values from callback function. it also publishes twist msg on topic '/cmd_vel'. For angular velocity in z direction, a PD (proportional derivative) controller is used which uses error term defined as ( distance to be maintained from wall - distance from wall). This error term and PD controller helps keep turtlebot path parallel to right side wall at predefined distance. Linear velocity is inversely proportional distance from front obstacle and is capped from -0.1 to 0.4. This helps keep turtlebot speed lower during corner rotate maneuver and high during straight line path.
+2) def tmnt_controller(): 
+<pre>
+tnmt controller subscribes to 'scan' data and gets desired values from callback function. it also
+publishes twist msg on topic '/cmd_vel'. For angular velocity in z direction, a PD (proportional 
+derivative) controller is used which uses error term defined as ( distance to be maintained from 
+wall - distance from wall). This error term and PD controller helps keep turtlebot path parallel 
+to right side wall at predefined distance. Linear velocity is inversely proportional distance from
+front obstacle and is capped from -0.1 to 0.4. This helps keep turtlebot speed lower during corner
+rotate maneuver and high during straight line path.
+</pre>
 	  
 - Launch info: This launch file first initializes the type of turtlebot. Here it has a default entry of burger. Next, the initial coordinates of the turtlebot have been defined. After that, set of commands launch the empty.world file in Gazebo and the dynamic parameters of the virtual world are initialized. After setting up environment and turtlebot, wallfollowing.py is run with 'assignment4' package. 
 
