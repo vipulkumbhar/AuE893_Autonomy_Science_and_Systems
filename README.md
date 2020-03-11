@@ -20,3 +20,13 @@ Launch files: /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment2_ws/launch
 Script      : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment3/scripts 
 </pre>
 
+### [HW4](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment4)   
+   
+<pre>
+Script 1      : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment4/script
+Script 2      : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment4/src
+Video         : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment4/video  
+Launch files  : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment4/launch 
+</pre>
+
+
