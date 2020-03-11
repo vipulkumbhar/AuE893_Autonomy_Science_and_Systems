@@ -15,7 +15,7 @@
 #### Part 1:  Launch file name: turtlebot3_wallfollowing.launch  
 - Script info:   
 	  
-- Launch info:
+- Launch info: This launch file first initializes the type of turtlebot. Here it has a default entry of burger. Next, the initial coordinates of the turtlebot have been defined. After that, set of commands launch the empty.world file in Gazebo and the dynamic parameters of the virtual world are initialized. After setting up environment and turtlebot, wallfollowing.py is run with 'assignment4' package. 
 
 The commands that need to be executed in the terminal for gazebo simulation are as follows:
 
@@ -35,7 +35,7 @@ $ rosrun assignment4 turtlebot3_wallfollowing.py
 #### Part 2:  Launch file name: turtlebot3_obstacleavoidance.launch  
 - Script info:   
 	  
-- Launch info:
+- Launch info: This launch file first initializes the type of turtlebot. Here it has a default entry of burger. Next, the initial coordinates of the turtlebot have been defined. After that, set of commands launch the empty.world file in Gazebo and the dynamic parameters of the virtual world are initialized. After setting up environment and turtlebot, wanderfast.py is run with 'assignment4' package. 
 
 The commands that need to be executed in the terminal for gazebo simulation are as follows:
 
