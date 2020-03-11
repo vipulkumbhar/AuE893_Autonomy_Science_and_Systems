@@ -10,7 +10,7 @@
 		  
 ### Assignment #4  
   
-### Launch Files  
+### Script and launch files information 
   
 #### Part 1:  Launch file name: turtlebot3_wallfollowing.launch 
 
