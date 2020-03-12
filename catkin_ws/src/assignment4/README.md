@@ -22,7 +22,7 @@ and gives front wall distance(s_d), left wall distance (y_l), right wall distanc
 -defined scan range. 
 </pre>
 
-2) def tmnt_controller(): 
+2) tmnt_controller(): 
 <pre>
 tnmt controller subscribes to 'scan' data and gets desired values from callback function. it also
 publishes twist msg on topic '/cmd_vel'. For angular velocity in z direction, a PD (proportional 
