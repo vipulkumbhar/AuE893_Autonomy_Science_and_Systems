@@ -1,0 +1,8 @@
+prefix=/home/vipulkumbhar/catkin_ws/install
+
+Name: opencv_tests
+Description: Description of opencv_tests
+Version: 1.12.8
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

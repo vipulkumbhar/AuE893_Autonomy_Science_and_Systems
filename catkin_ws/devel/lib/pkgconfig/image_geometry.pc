@@ -1,0 +1,8 @@
+prefix=/home/vipulkumbhar/catkin_ws/devel
+
+Name: image_geometry
+Description: Description of image_geometry
+Version: 1.12.8
+Cflags: -I/home/vipulkumbhar/catkin_ws/src/image_geometry/include
+Libs: -L${prefix}/lib -limage_geometry
+Requires: sensor_msgs
