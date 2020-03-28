@@ -23,7 +23,7 @@ class LineFollower(object):
     def __init__(self):
     
         self.bridge_object = CvBridge()
-        self.image_sub = rospy.Subscriber("/camera/rgb/image_raw",Image,self.camera_callback)
+        self.image_sub = rospy.Subscriber("/raspicam_node/image",Image,self.camera_callback)
         self.moveTurtlebot3_object = MoveTurtlebot3()
 
     def camera_callback(self,data):
@@ -84,10 +84,6 @@ class LineFollower(object):
 	# initiate control parameters
 	global temp,kd,kp,ki,prev_err,err_sum
 	err = cx - width/2
-	
-	rd = 1
-	if err > 0:
-		rd = -1
 
 	#define nodes/message	
 	cmd_vel_pub  = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
@@ -116,7 +112,7 @@ class LineFollower(object):
 		twist_object.angular.z = 0.02
 		if first_lane_confirmation:
 			twist_object.linear.x  = np.clip((lane_find_factor*0.05),0,0.1)
-			twist_object.angular.z = 0.2*rd
+			twist_object.angular.z = 0.2
 			n = n + timestep*0.2
 			if n > 3.14159*1.2 and invoke_lane_finder:
 				n = 0

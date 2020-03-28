@@ -1,0 +1,24 @@
+
+AR TAG follow
+
+PI terminal 1: ssh pi@IP
+roslaunch turtlebot3_bringup turtlebot3_robot.launch
+
+PI terminal 2: ssh pi@IP
+roslaunch raspicam_node camerav2_1280x720.launch enable_raw:=true
+
+Remote PC:
+rosrun tb3_line_following ar_follow.py
+
+
+Lane keeping
+
+PI terminal 1: ssh pi@IP
+roslaunch turtlebot3_bringup turtlebot3_robot.launch
+
+PI terminal 2: ssh pi@IP
+roslaunch raspicam_node camerav2_1280x720.launch enable_raw:=true
+
+rosrun tb3_line_following follow_line_step_hsv_bot
+
+
