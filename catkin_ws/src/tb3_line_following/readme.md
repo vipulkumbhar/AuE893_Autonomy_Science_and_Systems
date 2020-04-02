@@ -107,7 +107,6 @@ $ roslaunch tb3_line_following turtlebot3_follow_line_bot.launch
 		       
 Detection of tags in images is done by running the detect method of the detector:
 tags = at_detector.detect(img, estimate_tag_pose=False, camera_params=None, tag_size=None)
- 
 </pre>
 
 
