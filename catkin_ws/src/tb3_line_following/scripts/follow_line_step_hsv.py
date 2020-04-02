@@ -6,7 +6,7 @@ from cv_bridge import CvBridge, CvBridgeError
 from geometry_msgs.msg import Twist
 from sensor_msgs.msg import Image
 from move_robot import MoveTurtlebot3
-from sensor_msgs.msg import CompressedImage
+#from sensor_msgs.msg import CompressedImage
 
 temp    = 0
 kp      = 0.08
@@ -24,53 +24,33 @@ class LineFollower(object):
     def __init__(self):
     
         self.bridge_object = CvBridge()
-	#self.bridge_object = CvBridge.compressed_imgmsg_to_cv2() 
-
         self.image_sub = rospy.Subscriber("/camera/rgb/image_raw",Image,self.camera_callback)
 	#self.image_sub = rospy.Subscriber('/raspicam_node/image',Image,self.camera_callback) 
         self.moveTurtlebot3_object = MoveTurtlebot3()
 
     def camera_callback(self,data):
-        
+			
 	# We select bgr8 because its the OpneCV encoding by default
-	cv_image  = self.bridge_object.imgmsg_to_cv2(data, desired_encoding="bgr8")
-	#cv_image  = self.bridge_object.compressed_imgmsg_to_cv2(data, desired_encoding="bgr8")
-
-	cv_image2 = cv_image.copy()
-	
-	#check if white lane works
-	cv_image = cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY)
-	#filter too bright light
-	#ret,cv_image = cv2.threshold(cv_image,200,255,cv2.THRESH_TOZERO_INV)
-	cv_image = cv2.cvtColor(cv_image, cv2.COLOR_GRAY2BGR)		
-
+	cv_image = self.bridge_object.imgmsg_to_cv2(data, desired_encoding="bgr8")
+    
         # We get image dimensions and crop the parts of the image we dont need
         height, width, channels = cv_image.shape
+        crop_img = cv_image[(height)/2+100:(height)/2+120][1:width]
 
-	tss  = (width/1280)*2.1 
-	itss = int((width/1280)*2.5)
-	mll  = int(height/4) #Mask uper limit from bottom
-
-        #crop_img = cv_image[(height)/2+100:(height)/2+120][1:width]
-	crop_img = cv_image[(height)/2+mll:(height)][1:(width)]
+	# input for imshow
+	tss  =1 #(width/1280)*2.1 
+	itss =1 #int((width/1280)*2.5)
+	mll  =1 #int(height/4) #Mask uper limit from bottom
         
         # Convert from RGB to HSV
         hsv = cv2.cvtColor(crop_img, cv2.COLOR_BGR2HSV)
         
         # Define the Yellow Colour in HSV
-        """
-        To know which color to track in HSV use ColorZilla to get the color registered by the camera in BGR and convert to HSV. 
-        """
+
         # Threshold the HSV image to get only yellow colors
-        #lower_yellow = np.array([20,100,100])
-        #upper_yellow = np.array([50,255,255])
-
-	# Threshold the HSV image to get only white colors
-	lower_yellow = np.array([0,0,90])
-        upper_yellow = np.array([172,70,150])
-
-
-        mask = cv2.inRange(hsv, lower_yellow, upper_yellow)
+        lower_yellow = np.array([20,100,100])
+        upper_yellow = np.array([50,255,255])
+        mask = cv2.inRange(hsv,lower_yellow,upper_yellow)
         
         # Calculate centroid of the blob of binary image using ImageMoments
         m = cv2.moments(mask, False)
@@ -78,6 +58,7 @@ class LineFollower(object):
 	global first_lane_confirmation
 	global n,t1
 	global lane_find_factor
+	cv_image2 = cv_image
 	
         try:
             cx, cy = m['m10']/m['m00'], m['m01']/m['m00']
@@ -103,10 +84,9 @@ class LineFollower(object):
 	global temp,kd,kp,ki,prev_err,err_sum
 	err = cx - width/2
 
-	# lane finding rotation direction
-
 	#define nodes/message	
 	cmd_vel_pub  = rospy.Publisher('/cmd_vel', Twist, queue_size=1)
+        #self.moveTurtlebot3_object.move_robot(twist_object)
 	twist_object = Twist()
 
 	#avoid steady state oscillation
@@ -117,8 +97,8 @@ class LineFollower(object):
 	twist_object.angular.z = np.clip((-float(err)*kp/100 + kd*(-err+prev_err)/100),-0.2,0.2)
 	a_temp                 = np.clip((-float(err)*kp/100 + kd*(-err+prev_err)/100),-0.2,0.2)
 
-	twist_object.linear.x  = np.clip(0.2*(1-abs(a_temp)/0.2),0,0.08)
-	b_temp                 = np.clip(0.2*(1-abs(a_temp)/0.2),0,0.08)
+	twist_object.linear.x  = np.clip(0.2*(1-abs(a_temp)/0.2),0,0.2)
+	b_temp                 = np.clip(0.2*(1-abs(a_temp)/0.2),0,0.2)
 
 	#control end
 	prev_err = temp
@@ -156,10 +136,6 @@ class LineFollower(object):
 	if a_temp == twist_object.angular.z and b_temp ==twist_object.linear.x: 
 		lane_find_factor        = 0
 	    	n                       = 0
-	
-	# Debugging camera and lane finder
-	#twist_object.angular.z = 0
-	#twist_object.linear.x  = 0
 		
 	cmd_vel_pub.publish(twist_object)
 
@@ -185,8 +161,8 @@ class LineFollower(object):
 
 	# uncomment below to see two diffent image windows
 	#cv2.imshow("Original", cv_image)
-	cv2.resizeWindow('Original', (800,800))
-	#cv2.moveWindow("Original", 40,40)
+	cv2.resizeWindow('Original', (700,700))
+	cv2.moveWindow("Original", 30,30)
         #cv2.imshow("MASK", mask)
         cv2.waitKey(1)
 
@@ -198,9 +174,6 @@ class LineFollower(object):
 	print("        Timestep (sec)   => "+str(float(int(1000*timestep))/1000))
 	print("         Update rate     => "+str(int(1/timestep)))
 	print(" \n")
-	
-        # Make it start turning
-        self.moveTurtlebot3_object.move_robot(twist_object)
         
     def clean_up(self):
         self.moveTurtlebot3_object.clean_class()
@@ -208,7 +181,6 @@ class LineFollower(object):
 
 def main():
     rospy.init_node('line_following_node', anonymous=True)
-    #rospy.wait_for_message("/camera/rgb/image_raw", Image)
        
     line_follower_object = LineFollower()
     
@@ -227,3 +199,8 @@ def main():
   
 if __name__ == '__main__':
     main()
+
+
+"""
+
+"""

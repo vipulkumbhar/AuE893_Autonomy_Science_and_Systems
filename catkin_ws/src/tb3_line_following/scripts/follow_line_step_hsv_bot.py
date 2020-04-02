@@ -39,10 +39,10 @@ class LineFollower(object):
 	cv_image2 = cv_image.copy()
 	
 	#check if white lane works
-	cv_image = cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY)
+	#cv_image = cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY)
 	#filter too bright light
 	#ret,cv_image = cv2.threshold(cv_image,200,255,cv2.THRESH_TOZERO_INV)
-	cv_image = cv2.cvtColor(cv_image, cv2.COLOR_GRAY2BGR)		
+	#cv_image = cv2.cvtColor(cv_image, cv2.COLOR_GRAY2BGR)		
 
         # We get image dimensions and crop the parts of the image we dont need
         height, width, channels = cv_image.shape
