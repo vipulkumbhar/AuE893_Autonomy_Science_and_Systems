@@ -35,7 +35,7 @@ Launch files  : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment4/launch
    
 <pre>
 Script        : /AuE893Spring20_VipulKumbhar/catkin_ws/src/tb3_line_following/script
-Video         : /AuE893Spring20_VipulKumbhar/catkin_ws/src/tb3_line_following/video  
+Video         : /AuE893Spring20_VipulKumbhar/catkin_ws/src/tb3_line_following/videos  
 Launch files  : /AuE893Spring20_VipulKumbhar/catkin_ws/src/tb3_line_following/launch 
 </pre>
 
