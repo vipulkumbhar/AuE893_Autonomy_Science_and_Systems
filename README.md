@@ -18,6 +18,8 @@ Launch files: /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment2_ws/launch
 
 <pre>
 Script      : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment3/scripts 
+Video       : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment3/videos  
+Launch files: /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment3/launch 
 </pre>
 
 ### [HW4](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment4)   
