@@ -1,7 +1,0 @@
-<launch>
-  
-  <node name="republish" type="republish" pkg="image_transport" output="screen" args="compressed in:=/raspicam_node/image raw out:=/camera/rgb/image_raw" />
-
-  <node pkg = "tb3_line_following" type="follow_line_step_hsv_bot.py" name="turtlebot3_line_follower"/>
-
-</launch>
