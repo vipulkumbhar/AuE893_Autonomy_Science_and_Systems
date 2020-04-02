@@ -18,6 +18,8 @@ Launch files: /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment2_ws/launch
 
 <pre>
 Script      : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment3/scripts 
+Video       : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment3/videos  
+Launch files: /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment3/launch 
 </pre>
 
 ### [HW4](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment4)   
@@ -27,6 +29,14 @@ Script 1      : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment4/script
 Script 2      : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment4/src
 Video         : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment4/video  
 Launch files  : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment4/launch 
+</pre>
+
+### [HW5](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/tb3_line_following)   
+   
+<pre>
+Script        : /AuE893Spring20_VipulKumbhar/catkin_ws/src/tb3_line_following/script
+Video         : /AuE893Spring20_VipulKumbhar/catkin_ws/src/tb3_line_following/videos  
+Launch files  : /AuE893Spring20_VipulKumbhar/catkin_ws/src/tb3_line_following/launch 
 </pre>
 
 
