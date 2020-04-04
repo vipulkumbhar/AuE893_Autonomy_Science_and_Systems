@@ -12,8 +12,7 @@
   
 ### Script and launch files information 
   
-#### Part 1: Lane follower - Lane detection by camera and lane following of turtlebot3 based on 
-#### ROS,OpenCV 
+#### Part 1: Lane follower - Lane detection by camera and lane following of turtlebot3.
 
 - Script info: 'follow_line_step_hsv.py' and 'follow_line_step_hsv_bot.py' has camera_callback  
 function which works as following  
