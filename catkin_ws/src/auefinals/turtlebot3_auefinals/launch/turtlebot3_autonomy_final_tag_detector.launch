@@ -1,0 +1,9 @@
+<launch>
+
+  <node pkg="turtlebot3_auefinals" type="task0_apriltagdetector.py" name="april_tag_detector"/>
+
+</launch>
+
+
+
+
