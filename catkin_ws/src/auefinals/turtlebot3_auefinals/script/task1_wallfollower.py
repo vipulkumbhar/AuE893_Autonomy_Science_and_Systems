@@ -6,7 +6,7 @@ from geometry_msgs.msg  import Twist, Vector3
 from sensor_msgs.msg import LaserScan
 from std_msgs.msg import Int64
 
-distancefromwall     = 0.30
+distancefromwall     = 0.20
 x    = np.zeros((360))# lidar scan data
 f_d  = 0              # front wall distance
 r_d  = 0              # right wall distance
@@ -52,7 +52,7 @@ def tmnt_controller():
 		angular_zvel = np.clip(PID_output,-1.0,1.0)
 
 		vel_factor   = np.clip((1-abs(delta)/1.2),0,1)
-		linear_vel   = np.clip((f_d-0.20)*vel_factor,-0.1,0.2)   #0.15
+		linear_vel   = np.clip((f_d-0.15)*vel_factor,-0.1,0.2)   #0.15
 
 		if f_d < 0.5 and fr_d < 0.4:
 			angular_zvel = 0.6               #0.5

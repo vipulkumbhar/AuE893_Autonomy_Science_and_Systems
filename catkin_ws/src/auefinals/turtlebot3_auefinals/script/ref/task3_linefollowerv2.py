@@ -5,7 +5,6 @@ import numpy as np
 from cv_bridge import CvBridge, CvBridgeError
 from geometry_msgs.msg import Twist
 from sensor_msgs.msg import Image
-from std_msgs.msg import Int64
 from move_robot import MoveTurtlebot3
 #from sensor_msgs.msg import CompressedImage
 
@@ -18,11 +17,11 @@ err_sum = 0
 first_lane_confirmation = False
 n       = 0
 lane_find_factor = 0 
+t1      = 0
 cy      = 0 
 first_signal = True
 t1      = 0
 stop_time    = 0
-traffic_sign_trigger = False
 
 class LineFollower(object):
 
@@ -141,7 +140,8 @@ class LineFollower(object):
 		lane_find_factor        = 0
 	    	n                       = 0
 		
-	# Display	
+	# Display
+  		
 	# Print
         print("\n       Angular value sent=> "+str(float(int(1000*twist_object.angular.z))/1000))
 	print("       Linear  value sent=> "+str(float(int(1000*twist_object.linear.x))/1000))
@@ -151,36 +151,12 @@ class LineFollower(object):
 	#print("         Update rate     => "+str(int(1/timestep)))
 	print(" \n")
 
-	global traffic_sign_trigger
-	global stop_time 
-
-	sub_tf = rospy.Subscriber("/stop_sign", Int64,callback_traffic_sign_status) 
-	while traffic_sign_trigger and stop_time <4:
-		t0 = float(rospy.Time.now().to_sec())
-		stop_time = stop_time+(t0-t1)
-		t1   = t0
-		rospy.loginfo('stopping for signal')
-		rospy.loginfo('stop_time')
-		rospy.loginfo(stop_time)
-		twist_object.angular.z = 0
-		twist_object.linear.x  = 0
-		cmd_vel_pub.publish(twist_object)
-		rate = rospy.Rate(10)
-		rate.sleep()
-		
 	cmd_vel_pub.publish(twist_object)
 
     def clean_up(self):
         #self.moveTurtlebot3_object.clean_class()
-        cv2.destroyAllWindows()   
+        cv2.destroyAllWindows()       
 
-traffic_sign_trigger = False # false for stop
-def callback_traffic_sign_status(msg):
-    global traffic_sign_trigger
-    traffic_sign =  msg.data
-    if traffic_sign ==1:
-	traffic_sign_trigger = True
-	    
 def main():
     rospy.init_node('line_following_node', anonymous=True)  
     line_follower_object = LineFollower()

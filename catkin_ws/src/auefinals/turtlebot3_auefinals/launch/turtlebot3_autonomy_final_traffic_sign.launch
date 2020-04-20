@@ -1,6 +1,6 @@
 <launch>
 
-  <node pkg="turtlebot3_auefinals" type="task32_trafficsign.py" name="traffic_sign_detector"/>
+  <node pkg="turtlebot3_auefinals" type="task32_trafficsign.py" name="traffic_sign_publisher"/>
 
 </launch>
 

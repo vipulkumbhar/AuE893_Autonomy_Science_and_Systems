@@ -5,7 +5,6 @@ import numpy as np
 from cv_bridge import CvBridge, CvBridgeError
 from geometry_msgs.msg import Twist
 from sensor_msgs.msg import Image
-from std_msgs.msg import Int64
 from move_robot import MoveTurtlebot3
 #from sensor_msgs.msg import CompressedImage
 
@@ -18,11 +17,11 @@ err_sum = 0
 first_lane_confirmation = False
 n       = 0
 lane_find_factor = 0 
+t1      = 0
 cy      = 0 
 first_signal = True
 t1      = 0
 stop_time    = 0
-traffic_sign_trigger = False
 
 class LineFollower(object):
 
@@ -71,6 +70,7 @@ class LineFollower(object):
 
             #print
 	    rospy.loginfo("\n \n       Mode - Lane following maneuver") 
+	    cv_image2 = cv2.putText(cv_image2,'Mode: Lane following maneuver',(int(20*tss),int(23*tss)),cv2.FONT_HERSHEY_SIMPLEX,0.5*tss,(0,0,255),1*itss, cv2.LINE_AA)
 	    invoke_lane_finder      = False
 	    first_lane_confirmation = True
 
@@ -118,6 +118,7 @@ class LineFollower(object):
 		if first_lane_confirmation==False:
 
 			rospy.loginfo("Mode - Lane finding maneuver")
+			cv_image2 = cv2.putText(cv_image2,'Mode: Lane finding maneuver-1',(int(20*tss),int(23*tss)),cv2.FONT_HERSHEY_SIMPLEX,0.5*tss,(0,0,255),1*itss, cv2.LINE_AA)
 		twist_object.linear.x  = 0.1
 		twist_object.angular.z = 0.0
 
@@ -133,6 +134,7 @@ class LineFollower(object):
 				lane_find_factor = lane_find_factor+1  
 
 			rospy.loginfo("Mode - Lane finding maneuver-2")
+			cv_image2 = cv2.putText(cv_image2,'Mode: Lane finding maneuver-2',(int(20*tss),int(23*tss)),cv2.FONT_HERSHEY_SIMPLEX,0.5*tss,(0,0,255),1*itss, cv2.LINE_AA)
 			print("       Angle turned by bot=>"+str(n))      
 	
 	# Time
@@ -141,7 +143,66 @@ class LineFollower(object):
 		lane_find_factor        = 0
 	    	n                       = 0
 		
-	# Display	
+	# Display
+	#cv_image2 = cv2.rectangle(cv_image2,(int(10*tss),int(5*tss)),(int(290*tss),int(100*tss)),(0,250, 0),2*int(tss))
+        #cv_image= cv2.putText(cv_image,str(mode),(50,50),cv2.FONT_HERSHEY_SIMPLEX,1,(255,0,0),1, cv2.LINE_AA)
+	#msg1     = str("Lane  error            " + str(int(err*100/width))+" %")
+	#cv_image2 = cv2.putText(cv_image2,msg1,(int(20*tss),int(45*tss)),cv2.FONT_HERSHEY_SIMPLEX,0.4*tss,(0,255,0),1*itss, cv2.LINE_AA)
+
+	#msg2     = str("Linear  velocity        " + str(float(int(1000*twist_object.linear.x))/1000))
+	#cv_image2 = cv2.putText(cv_image2,msg2,(int(20*tss),int(60*tss)),cv2.FONT_HERSHEY_SIMPLEX,0.4*tss,(0,255,0),1*itss, cv2.LINE_AA)
+
+	#msg3     = str("Angular velocity        " + str(float(int(1000*twist_object.angular.z))/1000))
+	#cv_image2 = cv2.putText(cv_image2,msg3,(int(20*tss),int(75*tss)),cv2.FONT_HERSHEY_SIMPLEX,0.4*tss,(0,255,0),1*itss, cv2.LINE_AA)
+
+	#msg4     = str("Update time (ms)     " + str((int(1000*timestep))))
+        #cv_image2 = cv2.putText(cv_image2,msg4,(int(20*tss),int(90*tss)),cv2.FONT_HERSHEY_SIMPLEX,0.4*tss,(0,255,0),1*itss, cv2.LINE_AA)
+
+	# check signal
+	lower_yellow1 = np.array([0,100,100])
+        upper_yellow1 = np.array([10,255,255])
+	cv_image1 = cv2.inRange(cv_image,lower_yellow1,upper_yellow1)
+	m2 = cv2.moments(cv_image1, False)
+
+	signal_detected = False 
+	global first_signal
+
+	try:
+            cx1, cy1 = m2['m10']/m2['m00'], m2['m01']/m2['m00']
+	    #signal_detected = True
+
+        except ZeroDivisionError:
+		rospy.loginfo('no stop sign detected')	
+
+	global t1
+	global stop_time
+	if signal_detected==True and first_signal:
+		rospy.loginfo('stopping for signal')
+		rospy.loginfo('stop_time')
+		rospy.loginfo(stop_time)
+		twist_object.angular.z = 0
+		twist_object.linear.x  = 0
+		
+		t0   = float(rospy.Time.now().to_sec())
+		stop_time = stop_time+(t0-t1)
+		t1   = t0
+
+	if stop_time > 4:
+		first_signal = False
+  		
+		
+	#cv2.namedWindow('Original',cv2.WINDOW_NORMAL)
+	#mask2 = cv2.cvtColor(mask, cv2.COLOR_GRAY2RGB)
+	#image_vertical_concat = np.concatenate((mask2,cv_image2), axis=0)
+	#cv2.imshow('Original', image_vertical_concat)
+
+	# uncomment below to see two diffent image windows
+	#cv2.imshow("Original", cv_image)
+	#cv2.resizeWindow('Original', (700,700))
+	#cv2.moveWindow("Original", 30,30)
+        #cv2.imshow("MASK", mask)
+        #cv2.waitKey(1)
+
 	# Print
         print("\n       Angular value sent=> "+str(float(int(1000*twist_object.angular.z))/1000))
 	print("       Linear  value sent=> "+str(float(int(1000*twist_object.linear.x))/1000))
@@ -151,36 +212,12 @@ class LineFollower(object):
 	#print("         Update rate     => "+str(int(1/timestep)))
 	print(" \n")
 
-	global traffic_sign_trigger
-	global stop_time 
-
-	sub_tf = rospy.Subscriber("/stop_sign", Int64,callback_traffic_sign_status) 
-	while traffic_sign_trigger and stop_time <4:
-		t0 = float(rospy.Time.now().to_sec())
-		stop_time = stop_time+(t0-t1)
-		t1   = t0
-		rospy.loginfo('stopping for signal')
-		rospy.loginfo('stop_time')
-		rospy.loginfo(stop_time)
-		twist_object.angular.z = 0
-		twist_object.linear.x  = 0
-		cmd_vel_pub.publish(twist_object)
-		rate = rospy.Rate(10)
-		rate.sleep()
-		
 	cmd_vel_pub.publish(twist_object)
 
     def clean_up(self):
         #self.moveTurtlebot3_object.clean_class()
-        cv2.destroyAllWindows()   
+        cv2.destroyAllWindows()       
 
-traffic_sign_trigger = False # false for stop
-def callback_traffic_sign_status(msg):
-    global traffic_sign_trigger
-    traffic_sign =  msg.data
-    if traffic_sign ==1:
-	traffic_sign_trigger = True
-	    
 def main():
     rospy.init_node('line_following_node', anonymous=True)  
     line_follower_object = LineFollower()

@@ -103,7 +103,7 @@ if __name__ == '__main__':
 		#Testing our function
 		while not rospy.is_shutdown():
 			wander_controller_move()
-			rate = rospy.Rate(10)
+			rate = rospy.Rate(5)
 			rate.sleep()
 
 		#velocity_publisher.publish(Twist(Vector3(0,0,0), Vector3(0,0,0)))

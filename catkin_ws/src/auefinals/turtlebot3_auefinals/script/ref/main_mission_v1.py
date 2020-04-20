@@ -62,12 +62,11 @@ while mission_stage==2:
 	rospy.loginfo('obstacle avoidance mode')
 	#rospy.sleep(0.5)
 
-rospy.sleep(1)
+rospy.sleep(2)
 launch_oa.shutdown()
 pub_vel.publish(Twist(Vector3(0,0,0), Vector3(0,0,0)))
 
 ## lane follower
-
 # start 3 nodes
 launch_lf = roslaunch.parent.ROSLaunchParent(uuid, ["/home/vipulkumbhar/catkin_ws/src/auefinals/turtlebot3_auefinals/launch/turtlebot3_autonomy_final_lane_follower.launch"])
 if mission_stage == 3:
@@ -112,9 +111,10 @@ rospy.loginfo('Traffic sign stop for 4 sec started')
 rospy.sleep(4)
 rospy.loginfo('traffic sign stop ended')
 
+
 #5 start lane follower again
+launch_lf.start()
 while mission_stage ==3:
-	launch_lf.start()
 	rospy.loginfo('Lane following node after stop sign')
 launch_lf.shutdown()
 pub_vel.publish(Twist(Vector3(0,0,0), Vector3(0,0,0)))

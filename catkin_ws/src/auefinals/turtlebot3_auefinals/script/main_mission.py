@@ -72,7 +72,21 @@ if mission_stage == 3:
 	launch_lf.start()
 	print('starting lane follower mode')
 
-# follow lane
+#1 traffic sign - stop
+launch_sd = roslaunch.parent.ROSLaunchParent(uuid, ["/home/vipulkumbhar/catkin_ws/src/darknet_ros/darknet_ros/launch/darknet_ros.launch"])
+if mission_stage ==3:
+	launch_sd.start()
+	rospy.loginfo('Traffic sign recognition node started')
+
+rospy.sleep(5)
+
+#2 traffic sign callback publisher node
+launch_pn = roslaunch.parent.ROSLaunchParent(uuid, ["/home/vipulkumbhar/catkin_ws/src/auefinals/turtlebot3_auefinals/launch/turtlebot3_autonomy_final_traffic_sign.launch"])
+if mission_stage ==3:
+	launch_pn.start()
+	rospy.loginfo('Traffic sign recognition node started')
+
+#3 follow lane
 while mission_stage ==3:
 	rospy.loginfo('lane follower mode')
 	#rospy.sleep(0.1)
