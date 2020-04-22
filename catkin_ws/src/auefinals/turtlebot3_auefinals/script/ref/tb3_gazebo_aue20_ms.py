@@ -51,7 +51,6 @@ def leg_detector_callback(data):
 		# if len(data.people) == 0:
 		# 	following_person = False
 		# 	print "Person-Following mode de-activated!"
-
 		try:
 			person_x_dist = data.people[0].pos.x
 			person_y_dist = data.people[0].pos.y
@@ -81,7 +80,7 @@ def obj_detector_callback(data):
 				time.sleep(1)
 			stopped = True
 			#delta = 0
-			time.sleep(5)
+			time.sleep(15)
 			stopped = False
 			for i in range(0,20,5):
 				linear_speed = i * 0.01
@@ -216,7 +215,7 @@ def p_controller():
 	velocity_publisher = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
 	scan_subscriber = rospy.Subscriber('/scan', LaserScan, callback)
 	rate = rospy.Rate(5) # 10hz
-	image_sub = rospy.Subscriber("/camera/image",Image, camera_callback)
+	image_sub = rospy.Subscriber("/camera/rgb/image_raw",Image, camera_callback)
 	obj_detector_sub = rospy.Subscriber("/darknet_ros/bounding_boxes",BoundingBoxes, obj_detector_callback)
 	leg_tracker_sub = rospy.Subscriber("/people_tracker_measurements",PositionMeasurementArray, leg_detector_callback)
 	while not rospy.is_shutdown():

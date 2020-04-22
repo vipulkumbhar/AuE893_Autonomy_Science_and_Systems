@@ -2,7 +2,6 @@
 import rospy
 from geometry_msgs.msg import Twist
 
-
 class MoveTurtlebot3(object):
 
     def __init__(self):
@@ -46,12 +45,10 @@ class MoveTurtlebot3(object):
 def main():
     rospy.init_node('move_robot_node', anonymous=True)
     
-    
     moveTurtlebot3_object = MoveTurtlebot3()
     twist_object = Twist()
     # Make it start turning
     twist_object.angular.z = 0.5
-    
     
     rate = rospy.Rate(5)
     
@@ -67,7 +64,6 @@ def main():
     while not ctrl_c:
         moveTurtlebot3_object.move_robot(twist_object)
         rate.sleep()
-
-    
+ 
 if __name__ == '__main__':
     main()

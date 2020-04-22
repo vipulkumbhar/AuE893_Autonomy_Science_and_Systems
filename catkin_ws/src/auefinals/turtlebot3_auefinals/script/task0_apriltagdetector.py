@@ -82,11 +82,14 @@ def main():
         ctrl_c = True
     
     rospy.on_shutdown(shutdownhook)
-    while not ctrl_c:
+    #while not ctrl_c:
+    while not rospy.is_shutdown():
     	rate.sleep()
     
 if __name__ == '__main__':
-	main()
+	try:
+		main()
+	except rospy.ROSInterruptException: pass
 	
 
 

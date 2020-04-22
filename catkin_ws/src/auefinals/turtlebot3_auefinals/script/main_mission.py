@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 
-# work to do: automate the path arg for all launch files , to replace '/home/vipulkumbhar/catkin_ws/src'
-
 import roslaunch
 import rospy
 from std_msgs.msg import Int64
@@ -15,16 +13,16 @@ rospy.init_node('aue_final_team3', anonymous=True)
 uuid = roslaunch.rlutil.get_or_generate_uuid(None, False)
 roslaunch.configure_logging(uuid)
 
-# launch world (working)
-rospy.sleep(10)
+# wait for 'launch world'
+rospy.sleep(5)
 
 # launch SLAM mapping
 launch_slam = roslaunch.parent.ROSLaunchParent(uuid, ["/home/vipulkumbhar/catkin_ws/src/turtlebot3/turtlebot3_slam/launch/turtlebot3_slam.launch"])
 launch_slam.start()
 rospy.loginfo("slam initiated")
-rospy.sleep(5)
+rospy.sleep(2)
 
-# check mission status
+# mission status callback
 mission_stage = 1
 current_tag   = 0
 def callback_mission_stage(msg):
@@ -48,7 +46,7 @@ if mission_stage ==1:
 
 while mission_stage==1:
 	rospy.loginfo('mode - wall following')
-	rospy.sleep(0.5)
+	rospy.sleep(0.3)
 
 launch_wf.shutdown()
 
@@ -60,17 +58,13 @@ if mission_stage ==2:
 	print(' starting obstacle avoidance mode')
 while mission_stage==2:
 	rospy.loginfo('obstacle avoidance mode')
-	#rospy.sleep(0.5)
+	rospy.sleep(0.3)
 
-rospy.sleep(1)
+pub_vel.publish(Twist(Vector3(0,0,0), Vector3(0,0,0)))
 launch_oa.shutdown()
 pub_vel.publish(Twist(Vector3(0,0,0), Vector3(0,0,0)))
 
 ## lane follower
-launch_lf = roslaunch.parent.ROSLaunchParent(uuid, ["/home/vipulkumbhar/catkin_ws/src/auefinals/turtlebot3_auefinals/launch/turtlebot3_autonomy_final_lane_follower.launch"])
-if mission_stage == 3:
-	launch_lf.start()
-	print('starting lane follower mode')
 
 #1 traffic sign - stop
 launch_sd = roslaunch.parent.ROSLaunchParent(uuid, ["/home/vipulkumbhar/catkin_ws/src/darknet_ros/darknet_ros/launch/darknet_ros.launch"])
@@ -78,7 +72,7 @@ if mission_stage ==3:
 	launch_sd.start()
 	rospy.loginfo('Traffic sign recognition node started')
 
-rospy.sleep(5)
+rospy.sleep(3)
 
 #2 traffic sign callback publisher node
 launch_pn = roslaunch.parent.ROSLaunchParent(uuid, ["/home/vipulkumbhar/catkin_ws/src/auefinals/turtlebot3_auefinals/launch/turtlebot3_autonomy_final_traffic_sign.launch"])
@@ -87,37 +81,46 @@ if mission_stage ==3:
 	rospy.loginfo('Traffic sign recognition node started')
 
 #3 follow lane
+launch_lf = roslaunch.parent.ROSLaunchParent(uuid, ["/home/vipulkumbhar/catkin_ws/src/auefinals/turtlebot3_auefinals/launch/turtlebot3_autonomy_final_lane_follower.launch"])
+if mission_stage == 3:
+	launch_lf.start()
+	print('starting lane follower mode')
+
 while mission_stage ==3:
 	rospy.loginfo('lane follower mode')
-	#rospy.sleep(0.1)
+	rospy.sleep(0.3)
 
+# shutdown lane follower
 launch_lf.shutdown()
 pub_vel.publish(Twist(Vector3(0,0,0), Vector3(0,0,0)))
 	
 ## leg follower
-# start leg detector node
+
+#1 start leg detector node
 launch_ld = roslaunch.parent.ROSLaunchParent(uuid,["/home/vipulkumbhar/catkin_ws/src/People_Detection/people/leg_detector/launch/pi_leg_detector.launch"])
 launch_ld.start()
 
-rospy.sleep(4)
+rospy.sleep(2)
 
+#2 start leg follower ndoe
 rospy.loginfo('Starting leg follower')
 launch_legf = roslaunch.parent.ROSLaunchParent(uuid,["/home/vipulkumbhar/catkin_ws/src/auefinals/turtlebot3_auefinals/launch/turtlebot3_autonomy_final_leg_follower.launch"])
 launch_legf.start()
 
-# save SLAM map 
-# rosrun map_server map_saver -f <map_name>
-
-while mission_stage ==4:
+while mission_stage ==4 and not rospy.is_shutdown():
 	rospy.loginfo('mode - leg follower')
+	rospy.sleep(0.3)
 
+# shutdown all nodes
 launch_ld.shutdown()
 launch_legf.shutdown()
 pub_vel.publish(Twist(Vector3(0,0,0), Vector3(0,0,0)))
-# close all
 
-# if __int__ == '__main__':
-#	aue_final()
+rospy.loginfo('closing all nodes')
+rospy.sleep(5)
+
+#to delete temp log files 
+#rosclean purge
 
 	
 

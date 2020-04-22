@@ -7,6 +7,7 @@ from geometry_msgs.msg import Twist
 from sensor_msgs.msg import Image
 from std_msgs.msg import Int64
 from move_robot import MoveTurtlebot3
+import apriltag
 #from sensor_msgs.msg import CompressedImage
 
 temp    = 0
@@ -117,11 +118,29 @@ class LineFollower(object):
 
 		if first_lane_confirmation==False:
 
+			detector = apriltag.Detector()
+			frame = cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY)
+			result = detector.detect(frame)
+			tag_detected = False
+			cx = 0
+			cy = 0
+			twist_object.linear.x  = 0.1
+			twist_object.angular.z = 0.0
+
+			if len(result)>0:
+				tag_detected = True
+				tag = result[0].tag_family
+				cx  = result[0].center[0]
+				cy  = result[0].center[1]
+				err = cx - width/2
+				if err >-5 and err <5:           #avoid steady state oscillation
+					err = 0
+				twist_object.angular.z = np.clip((-float(err)*0.08/100),-0.2,0.2)
+				twist_object.linear.x  = 0.1
+				#print(cx, cy)
+
 			rospy.loginfo("Mode - Lane finding maneuver")
-		twist_object.linear.x  = 0.1
-		twist_object.angular.z = 0.0
-
-
+			
 		if first_lane_confirmation:
 
 			twist_object.linear.x  = np.clip((lane_find_factor*0.05),0,0.08)
@@ -186,22 +205,22 @@ def main():
     line_follower_object = LineFollower()
 
     rate = rospy.Rate(10)
-    ctrl_c = False
+    #ctrl_c = False
     def shutdownhook():
         # works better than the rospy.is_shut_down()
         # line_follower_object.clean_up()
         rospy.loginfo("shutdown time!")
         ctrl_c = True
     
-    rospy.on_shutdown(shutdownhook)
-    while not ctrl_c:
+    #rospy.on_shutdown(shutdownhook)
+    #while not ctrl_c:
+    while not rospy.is_shutdown():
     	rate.sleep()
      
 if __name__ == '__main__':
 	try:
 		main()
-	except rospy.ROSInterruptException:	
-		pass
+	except rospy.ROSInterruptException: pass
 
 
 

@@ -63,6 +63,8 @@ def wander_controller_move():
 		vel_msg = Twist(Vector3(linear_vel,0,0), Vector3(0,0,angular_vel))
 	
 		velocity_publisher.publish(vel_msg)
+		rate = rospy.Rate(10)
+		rate.sleep()
 		rospy.loginfo('Obstacle avoidance mode')
 
 def callback(data):
@@ -103,10 +105,8 @@ if __name__ == '__main__':
 		#Testing our function
 		while not rospy.is_shutdown():
 			wander_controller_move()
-			rate = rospy.Rate(5)
-			rate.sleep()
-
-		#velocity_publisher.publish(Twist(Vector3(0,0,0), Vector3(0,0,0)))
+				
+		velocity_publisher.publish(Twist(Vector3(0,0,0), Vector3(0,0,0)))
 
 	except rospy.ROSInterruptException: pass
 
