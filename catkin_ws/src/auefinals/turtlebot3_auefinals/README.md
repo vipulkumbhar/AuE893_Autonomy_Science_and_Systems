@@ -10,12 +10,19 @@
 		  
 ### Final Project 
 
-Final project is made up of main 5 maneuvers.  
-1) Wall follower - Turtlebot maintains predefined distance from right-side wall. Proportional controller based on distance from right-side wall is used to control z-angular velocity.
-2) Obstacle avoidance - Turtlebot maintains safe front distance from obstacle and maneuvers through course until it finds yellow lanes. 
-3) lane follower - Turtlebot follows yellow lane using image-processing (to detect lane center) and proportional controller to control z-angular velocity.
-4) Traffic sign detection - Darknet package is used for traffic sign detection. Traffic sign callback functions stop the turtlebot for 4 seconds. 
-5) People / leg tracker - People tracker package is used for leg detection. Proportional controller is to control z-angular velocity to guide tutrlebot towards nearest detected leg. If leg is not detected or lost, turtlebot goes into obstacle avoidance mode.  
+Final project is made up of main 5 maneuvers.    
+  
+1) Wall follower - Turtlebot maintains predefined distance from right-side wall. Proportional controller based on distance from right-side wall is used to control z-angular velocity.  
+  
+2) Obstacle avoidance - Turtlebot maintains safe front distance from obstacle and maneuvers through course until it finds yellow lanes.  
+  
+3) lane follower - Turtlebot follows yellow lane using image-processing (to detect lane center) and proportional controller 
+to control z-angular velocity.  
+  
+4) Traffic sign detection - Darknet package is used for traffic sign detection. Traffic sign callback functions stop the turtlebot for 4 seconds.   
+  
+5) People / leg tracker - People tracker package is used for leg detection. Proportional controller is to control z-angular velocity to guide tutrlebot towards nearest detected leg. If leg is not detected or lost, turtlebot goes into obstacle avoidance mode.   
+  
   
 ### Methodology
 Team explored two methodologies for final project
