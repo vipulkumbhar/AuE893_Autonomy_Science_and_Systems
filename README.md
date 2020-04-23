@@ -6,6 +6,18 @@ This repository contains the code and assets for Clemson Univeristy course AuE89
 1) Clone or download the repository from [link](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar.git)
 2) Workspace: Ubuntu 16.04, ROS Kinetic Kame
 
+
+# Team Name: TMNT (Teenage Mutant Ninja Turtles)	
+
+## Team Number: 03  
+### Team Members: <img align="right" width="300" height="226" src="https://raw.githubusercontent.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/master/catkin_ws/git_readme_files/ninja_turtles_PNG55.png">   	
+		Akshay Mahajan 
+		Ashit Mohanty  
+		Manu Srivastava  
+		Siddesh Bagkar  
+		Vipul Kumbhar  
+
+
 ### [HW2](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment2_ws)
 
 <pre>
