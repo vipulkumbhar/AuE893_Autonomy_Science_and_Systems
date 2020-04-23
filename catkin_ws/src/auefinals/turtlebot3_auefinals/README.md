@@ -23,7 +23,7 @@ Team explored two methodologies for final project
 [Script](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/auefinals/turtlebot3_auefinals/script/tb3_gazebo_aue20_ms.py)  
 [Launch file](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/auefinals/turtlebot3_auefinals/launch/turtlebot3_autonomy_final_main_mission2.launch)    
 
-2) Distributed task scripts (Individual nodes for each task controlled from main mission control node). 
+2) Distributed task scripts (Individual nodes for each task controlled from main mission control node)   
 [Script](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/auefinals/turtlebot3_auefinals/script)  
 [Launch file](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/auefinals/turtlebot3_auefinals/launch)
 
