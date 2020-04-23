@@ -9,7 +9,19 @@
 		Vipul Kumbhar  
 		  
 ### Final Project 
+
+Final project is made up of main 5 maneuvers.  
+1) Wall follower
+2) Obstacle avoidance
+3) lane follower
+4) Traffic sign detection
+5) People / leg tracker
   
+### Methodology
+Team explored two methodologies for final project
+1) Single script file for all tasks
+2) Distributed task scripts (Individual nodes for each task controlled from main mission control node)
+
 ### Script and launch files information 
   
 #### Part 1: Lane follower - Lane detection by camera and lane following of turtlebot3.
@@ -54,6 +66,7 @@ The commands that need to be executed in the terminal for gazebo simulation are 
 $ roslaunch tb3_line_following turtlebot3_follow_line.launch       
 ```
 ![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/tb3_line_following/videos/gifs_for_readme/lane_following_gazebo.GIF)
+
 #### - [Videos](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/tb3_line_following/videos/lane_following) - Full length videos of lane following task
 
 Launch file name: turtlebot3_follow_line_bot.launch (launches follow_lane_step_hsv_bot.py)
@@ -83,44 +96,7 @@ $ roslaunch tb3_line_following turtlebot3_follow_line_bot.launch
 
 #### - [Videos](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/tb3_line_following/videos/lane_following) - Full length videos of lane following task
   
-#### Part 2:  April tag follower 
-- Script info:  wallfollowing.py script is mainly divided in four parts.      
 
-1) Callback(data) : 
-<pre>
- Similar to lane follower script, the image is extracted from raspicam_node and run through april tag 
- detector (explained below) to receive x,y image coordinates of tag. If multiple tags are detected  
- warning is sent.
- 
- Image y co-ordinate of detected april tag is used as input for proportional controller for turtlebot3
- to follow april tag. 
- 
-- Launch info:   
-
-Launch file name: turtlebot3_follow_line.launch  
-<pre>
-This launch file launches 'ar_follow.py' from package 'tb3_line_following'.  
-Before launching this, make sure that robot bringup node and camera bring-up node is running.
-</pre>
-
-The commands that need to be executed to setup turtlebot environment for run are as follows:
-
-```
-1] $ roscore          # in remote-pc terminal to start roscore  
-2] $ ssh pi@IP        # in remote-pc terminal to SSH robot
-3] $ roslaunch turtlebot3_bringup bringup_robot.launch  # in turtlebot terminal to bring up robot
-4] $ roslaunch raspicam_node camerav2_1280x720.launch enable_raw:=true # in turtlebot terminal to 
-bring up camera and publish raw images
-```
-The command that need to be executed in remote-pc to run april tag follower is as follow:
-```
-$ roslaunch tb3_line_following turtlebot3_follow_ar.launch   
-```
-![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/tb3_line_following/videos/gifs_for_readme/April_tag_following_turtlebot.GIF)
-
-![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/tb3_line_following/videos/gifs_for_readme/april_tag_real_bot.gif)
-
-#### - [Videos](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/tb3_line_following/videos/april_tag) - Full length videos of april tag following task
 
 ### File locations:
 #### - [Launch files](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/tb3_line_following/launch)     
