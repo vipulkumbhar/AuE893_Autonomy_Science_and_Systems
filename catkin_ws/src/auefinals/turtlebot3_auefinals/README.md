@@ -51,9 +51,9 @@ $ roslaunch turtlebot3_auefinals turtlebot3_autonomy_final_main_mission.launch
   
 #### Methodology 1
 
-- Script info: 'tb3_gazebo_aue20_ms.py' has all mode transitions and all 5 maneuvers which control delta (z-angular velocity) of turtlebot. After initiating node, it waits for 10 seconds for all other launch processes to finish.   
+- Script info: ['tb3_gazebo_aue20_ms.py'](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/auefinals/turtlebot3_auefinals/script/tb3_gazebo_aue20_ms.py) has all mode transitions and all 5 maneuvers which control delta (z-angular velocity) of turtlebot. After initiating node, it waits for 10 seconds for all other launch processes to finish.   
   
-- Launch file info: 'turtlebot3_autonomy_final_main_mission2.launch' launches   
+- Launch file info: ['turtlebot3_autonomy_final_main_mission2.launch'](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/auefinals/turtlebot3_auefinals/launch/turtlebot3_autonomy_final_main_mission2.launch) launches   
 1) Gazebo world  
 2) People   
 3) gmapping slam  
