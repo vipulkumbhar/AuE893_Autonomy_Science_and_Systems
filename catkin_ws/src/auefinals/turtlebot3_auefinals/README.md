@@ -48,12 +48,10 @@ $ roslaunch turtlebot3_auefinals turtlebot3_autonomy_final_main_mission.launch
   
 ### Script and launch files information 
   
-#### Part 1: Lane follower - Lane detection by camera and lane following of turtlebot3.
+#### Methodology 1
 
-- Script info: 'follow_line_step_hsv.py' and 'follow_line_step_hsv_bot.py' has camera_callback  
-function which works as following  
+- Script info: 'tb3_gazebo_aue20_ms.py' has all mode transitions and all 5 maneuvers which control delta (z-angular velocity) of turtlebot.   
 
-1) camera_callback(self,data) : 
 <pre>
 
 __init__ (self) subscribes to topic "/camera/rgb/image_raw" for gazebo simulation and to topic  
