@@ -21,12 +21,24 @@ Final project is made up of main 5 maneuvers.
 Team explored two methodologies for final project
 1) Single script file for all tasks.  
 [Script](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/auefinals/turtlebot3_auefinals/script/tb3_gazebo_aue20_ms.py)  
-[Launch file](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/auefinals/turtlebot3_auefinals/launch/turtlebot3_autonomy_final_main_mission2.launch)    
+[Launch file](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/auefinals/turtlebot3_auefinals/launch/turtlebot3_autonomy_final_main_mission2.launch).     
+  
+The commands that need to be executed in the terminal for gazebo simulation are as follows:
+
+```
+$ roslaunch turtlebot3_auefinals turtlebot3_autonomy_final_main_mission2.launch       
+```
 
 2) Distributed task scripts (Individual nodes for each task controlled from main mission control node)   
 [Script](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/auefinals/turtlebot3_auefinals/script)  
-[Launch file](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/auefinals/turtlebot3_auefinals/launch)
+[Launch file](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/auefinals/turtlebot3_auefinals/launch)  
+  
+The commands that need to be executed in the terminal for gazebo simulation are as follows:
 
+```
+$ roslaunch turtlebot3_auefinals turtlebot3_autonomy_final_main_mission.launch       
+```
+  
 ### Script and launch files information 
   
 #### Part 1: Lane follower - Lane detection by camera and lane following of turtlebot3.
