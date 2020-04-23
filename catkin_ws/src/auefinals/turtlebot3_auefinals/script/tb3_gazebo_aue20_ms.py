@@ -77,6 +77,10 @@ def leg_detector_callback(data):
 		if math.sqrt(person_x_dist*person_x_dist + person_y_dist*person_y_dist) > 0.5:
 			linear_speed = 0.20
 			delta        = person_y_dist
+
+		if math.sqrt(person_x_dist*person_x_dist + person_y_dist*person_y_dist) < 0.3:
+			linear_speed = -0.20
+			delta        = person_y_dist
 		else:
 			linear_speed = 0
 			delta        = 0
