@@ -76,8 +76,8 @@ move_robot.py) and Cvbridge to work with camera images in ROS environment.
 
 <pre>
 Vipul Kumbhar 	: Code integration of methodology 2 + readme file + Traffic sign detection code
-Akshay Mahajan	: Lane follower code
-Ashit Mohanty 	: Obstacle avoidance code
+Akshay Mahajan	: Lane follower code + mode/mission transition code
+Ashit Mohanty 	: Gazebo environment setup + Obstacle avoidance code
 Manu Srivastava	: Code integration of methodology 1  + people/leg follower code
 Siddhesh Bagkar	: April tag detection code + wall follower code
 </pre>
