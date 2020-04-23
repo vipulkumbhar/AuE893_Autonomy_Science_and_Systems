@@ -62,7 +62,7 @@ $ roslaunch turtlebot3_auefinals turtlebot3_autonomy_final_main_mission.launch
 6) tb3_gazebo_aue20_ms.py script   
 
 #### Methodology 2
-- Script info:['main_mission.py'](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/auefinals/turtlebot3_auefinals/script/main_mission.py) launches gmapping slam, april-tag detector and mission stage callback. As per mission stage, it initiates the necessary nodes for ex. for lane following it fist launches darknet_ros (traffic sign detecter) and then lane follower node. After finishing each task, the node is killed and next nodes are initiated.  
+- Script info:['main_mission.py'](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/auefinals/turtlebot3_auefinals/script/main_mission.py) launches gmapping slam, april-tag detector and mission stage callback. As per mission stage, it initiates the necessary nodes for ex. for lane following mission stage, it first launches darknet_ros (traffic sign detecter) and then lane follower node. After finishing each task, the node is killed and next nodes are initiated.  
 
 - Launch file info: ['turtlebot3_autonomy_final_main_mission.launch'](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/auefinals/turtlebot3_auefinals/launch/turtlebot3_autonomy_final_main_mission.launch) launches  
 1) Gazebo world  
