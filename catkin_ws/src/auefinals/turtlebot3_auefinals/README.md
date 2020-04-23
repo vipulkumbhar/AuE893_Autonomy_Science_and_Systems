@@ -50,21 +50,17 @@ $ roslaunch turtlebot3_auefinals turtlebot3_autonomy_final_main_mission.launch
   
 #### Methodology 1
 
-- Script info: 'tb3_gazebo_aue20_ms.py' has all mode transitions and all 5 maneuvers which control delta (z-angular velocity) of turtlebot.   
-
-<pre>
-
-__init__ (self) subscribes to topic "/camera/rgb/image_raw" for gazebo simulation and to topic  
-"/raspicam_node/image" for turtlebot3 real run. It also calls turtlebot class (defined in   
-move_robot.py) and Cvbridge to work with camera images in ROS environment.
-
-</pre>
-	  
-
-![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/tb3_line_following/videos/gifs_for_readme/Lane_following_turtlebot.GIF)
-
-#### - [Videos](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/tb3_line_following/videos/lane_following) - Full length videos of lane following task
+- Script info: 'tb3_gazebo_aue20_ms.py' has all mode transitions and all 5 maneuvers which control delta (z-angular velocity) of turtlebot. After initiating node, it waits for 10 seconds for all other launch processes to finish.   
   
+- Launch file info: 'turtlebot3_autonomy_final_main_mission2.launch' launches   
+1) Gazebo world  
+2) People   
+3) gmapping slam  
+4) darknet_ros (traffic sign detecter)    
+5) pi_leg_detector (people/leg detector)   
+6) tb3_gazebo_aue20_ms.py script   
+
+	  
 ### File locations:
 #### - [Launch files](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/auefinals/turtlebot3_auefinals/launch)     
 #### - [Script files](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/auefinals/turtlebot3_auefinals/script)  
