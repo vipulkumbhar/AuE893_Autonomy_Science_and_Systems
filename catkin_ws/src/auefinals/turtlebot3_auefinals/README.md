@@ -24,7 +24,8 @@ to control z-angular velocity.
 5) People / leg tracker - People tracker package is used for leg detection. Proportional controller is to control z-angular velocity to guide tutrlebot towards nearest detected leg. If leg is not detected or lost, turtlebot goes into obstacle avoidance mode.   
   
   
-### Methodology
+### Final project - problem solving approaches   
+  
 Team explored two methodologies for final project
 #### Methodology 1: Single script file for all tasks.  
 [Script](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/auefinals/turtlebot3_auefinals/script/tb3_gazebo_aue20_ms.py)  
@@ -60,6 +61,14 @@ $ roslaunch turtlebot3_auefinals turtlebot3_autonomy_final_main_mission.launch
 5) pi_leg_detector (people/leg detector)   
 6) tb3_gazebo_aue20_ms.py script   
 
+#### Methodology 2
+- Script info:['main_mission.py'](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/auefinals/turtlebot3_auefinals/script/main_mission.py) launches gmapping slam, april-tag detector and mission stage callback. As per mission stage, it initiates the necessary nodes for ex. for lane following it fist launches darknet_ros (traffic sign detecter) and then lane follower node. After finishing each task, the node is killed and next nodes are initiated.  
+
+- Launch file info: ['turtlebot3_autonomy_final_main_mission.launch'](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/auefinals/turtlebot3_auefinals/launch/turtlebot3_autonomy_final_main_mission.launch) launches  
+1) Gazebo world  
+2) People 
+3) April tag detector
+4) main_mission.py script 
 	  
 ### File locations:
 #### - [Launch files](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/auefinals/turtlebot3_auefinals/launch)     
