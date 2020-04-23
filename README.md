@@ -37,6 +37,14 @@ Launch files  : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment4/launch
 Script        : /AuE893Spring20_VipulKumbhar/catkin_ws/src/tb3_line_following/script
 Video         : /AuE893Spring20_VipulKumbhar/catkin_ws/src/tb3_line_following/videos  
 Launch files  : /AuE893Spring20_VipulKumbhar/catkin_ws/src/tb3_line_following/launch 
+</pre>  
+  
+### [Final Project](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/auefinals/turtlebot3_auefinals)   
+   
+<pre>
+Script        : /AuE893Spring20_VipulKumbhar/catkin_ws/src/auefinals/turtlebot3_auefinals/script
+Video         : /AuE893Spring20_VipulKumbhar/catkin_ws/src/auefinals/turtlebot3_auefinals/video  
+Launch files  : /AuE893Spring20_VipulKumbhar/catkin_ws/src/auefinals/turtlebot3_auefinals/launch 
 </pre>
 
 
