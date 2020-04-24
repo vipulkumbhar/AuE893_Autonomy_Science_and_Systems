@@ -62,13 +62,16 @@ $ roslaunch turtlebot3_auefinals turtlebot3_autonomy_final_main_mission.launch
 6) tb3_gazebo_aue20_ms.py script   
 
 #### Methodology 2
-- Script info:['main_mission.py'](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/auefinals/turtlebot3_auefinals/script/main_mission.py) launches gmapping slam, april-tag detector and mission stage callback. As per mission stage, it initiates the necessary nodes for ex. for lane following mission stage, it first launches darknet_ros (traffic sign detecter) and then lane follower node. After finishing each task, the node is killed and next nodes are initiated.  
+- Script info:['main_mission.py'](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/auefinals/turtlebot3_auefinals/script/main_mission.py) launches gmapping slam, april-tag detector callback and mission stage callback. April tag detector node launched from 'turtlebot3_autonomy_final_main_mission.launch' publishes the tagID of april tag detected and mission stage from previous mission stage and currently detected april tag. As per mission stage, it initiates the necessary nodes for task execution.  
+For ex. for lane following mission stage, it first launches darknet_ros (traffic sign detecter) and then lane follower node. After finishing each task, the nodes for that task are killed and next nodes are initiated.  
 
 - Launch file info: ['turtlebot3_autonomy_final_main_mission.launch'](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/auefinals/turtlebot3_auefinals/launch/turtlebot3_autonomy_final_main_mission.launch) launches  
 1) Gazebo world  
 2) People 
 3) April tag detector
-4) main_mission.py script 
+4) main_mission.py script   
+  
+First 3 launch nodes are essential ones, and main_mission.py controls the launch and shutdown of essential nodes for particular tasks. 
 	  
 ### File locations:
 #### - [Launch files](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/auefinals/turtlebot3_auefinals/launch)     
