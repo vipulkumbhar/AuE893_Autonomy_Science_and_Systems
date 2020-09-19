@@ -22,7 +22,7 @@ This repository contains the code and assets for Clemson Univeristy course AuE89
 
 ![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/assignment2_ws/video/closedloop_gif.gif)
 
-### [HW3](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment3) TurtleBot3 basic maneuvers and emergency braking maneuvers 
+### [HW3](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment3) TurtleBot3 basic maneuvers and emergency braking
 
 ![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/git_readme_files/move.gif)
 
