@@ -21,9 +21,9 @@
 The commands that need to be executed in the terminal are as follows:
 
 ```
-$ roslaunch assignment3_turtlebot3 move.launch code:=square    #for running square.py
+$ roslaunch assignment3 move.launch code:=square    #for running square.py
 	  
-$ roslaunch assignment3_turtlebot3 move.launch code:=circle    #for running circle.py
+$ roslaunch assignment3 move.launch code:=circle    #for running circle.py
 ```
 
 
@@ -43,7 +43,7 @@ $ roslaunch assignment3_turtlebot3 move.launch code:=circle    #for running circ
 The command that need to be executed in the terminal are as follows:
 
 ``` 
-$ roslaunch assignment3_turtlebot3 emergency_braking.launch    #for running emergency_brake.py
+$ roslaunch assignment3 emergency_braking.launch    #for running emergency_brake.py
 ```
  
 
