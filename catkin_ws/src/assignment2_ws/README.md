@@ -1,6 +1,6 @@
 # AuE893: Autonomy Science and System
 
-## Assignement 2 - Turtlesim
+## Assignement 2 - TurtleSim
 
 1) circle.py: Make the Turtle move in a circle with constant twist velocity  
   
