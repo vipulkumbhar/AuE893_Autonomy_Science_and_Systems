@@ -35,15 +35,18 @@ This repository contains the code and assets for Clemson Univeristy course AuE89
 
 ### [HW5](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/tb3_line_following) Part 1: Lane detection by camera and lane following by turtlebot3
 
-(https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/tb3_line_following/videos/gifs_for_readme/lane_following_gazebo.GIF)
+![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/tb3_line_following/videos/gifs_for_readme/lane_following_gazebo.GIF)
 
-### Part 2: April tag detection and follower
+![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/tb3_line_following/videos/gifs_for_readme/lane_following.GIF)
+
+![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/tb3_line_following/videos/gifs_for_readme/Lane_following_turtlebot.GIF)
+
+
+### [HW5](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/tb3_line_following) Part 2: April tag detection and follower
    
-<pre>
-Script        : /AuE893Spring20_VipulKumbhar/catkin_ws/src/tb3_line_following/script
-Video         : /AuE893Spring20_VipulKumbhar/catkin_ws/src/tb3_line_following/videos  
-Launch files  : /AuE893Spring20_VipulKumbhar/catkin_ws/src/tb3_line_following/launch 
-</pre>  
+![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/tb3_line_following/videos/gifs_for_readme/April_tag_following_turtlebot.GIF)
+
+![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/tb3_line_following/videos/gifs_for_readme/april_tag_real_bot.gif)
   
 ### [Final Project](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/auefinals/turtlebot3_auefinals)   
    
