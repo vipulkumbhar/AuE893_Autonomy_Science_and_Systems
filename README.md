@@ -50,10 +50,16 @@ This repository contains the code and assets for Clemson Univeristy course AuE89
   
 ### [Final Project](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/auefinals/turtlebot3_auefinals)   
    
-<pre>
-Script        : /AuE893Spring20_VipulKumbhar/catkin_ws/src/auefinals/turtlebot3_auefinals/script
-Video         : /AuE893Spring20_VipulKumbhar/catkin_ws/src/auefinals/turtlebot3_auefinals/video  
-Launch files  : /AuE893Spring20_VipulKumbhar/catkin_ws/src/auefinals/turtlebot3_auefinals/launch 
-</pre>
+Final project is made up of main 5 maneuvers.
+
+Wall follower - Turtlebot maintains predefined distance from right-side wall. Proportional controller based on distance from right-side wall is used to control z-angular velocity.
+
+Obstacle avoidance - Turtlebot maintains safe front distance from obstacle and maneuvers through course until it finds yellow lanes.
+
+lane follower - Turtlebot follows yellow lane using image-processing (to detect lane center) and proportional controller to control z-angular velocity.
+
+Traffic sign detection - Darknet package is used for traffic sign detection. Traffic sign callback functions stop the turtlebot for 4 seconds.
+
+People / leg tracker - People tracker package is used for leg detection. Proportional controller is to control z-angular velocity to guide tutrlebot towards nearest detected leg. If leg is not detected or lost, turtlebot goes into obstacle avoidance mode.
 
 
