@@ -18,7 +18,7 @@ This repository contains the code and assets for Clemson Univeristy course AuE89
 		Vipul Kumbhar  
 
 
-### [HW2](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment2_ws) TurtleSim Basic Maneuvers
+### [HW2](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment2_ws) TurtleSim basic maneuvers
 
 <pre>
 Script      : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment2_ws/scripts       
@@ -26,13 +26,9 @@ Video       : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment2_ws/video
 Launch files: /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment2_ws/launch 
 </pre>
 
-### [HW3](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment3)  
+### [HW3](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment3) TurtleBot basic maneuvers and emergency braking maneuvers 
 
-<pre>
-Script      : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment3/scripts 
-Video       : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment3/videos  
-Launch files: /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment3/launch 
-</pre>
+![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/git_readme_files/move.gif)
 
 ### [HW4](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment4)   
    
