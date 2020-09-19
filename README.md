@@ -18,7 +18,7 @@ This repository contains the code and assets for Clemson Univeristy course AuE89
 		Vipul Kumbhar  
 
 
-### [HW2](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment2_ws)
+### [HW2](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment2_ws) TurtleSim Basic Maneuvers
 
 <pre>
 Script      : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment2_ws/scripts       
