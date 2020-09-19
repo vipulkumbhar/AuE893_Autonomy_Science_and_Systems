@@ -20,11 +20,7 @@ This repository contains the code and assets for Clemson Univeristy course AuE89
 
 ### [HW2](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment2_ws) TurtleSim basic maneuvers
 
-<pre>
-Script      : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment2_ws/scripts       
-Video       : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment2_ws/video  
-Launch files: /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment2_ws/launch 
-</pre>
+![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/assignment2_ws/video/closedloop_gif.gif)
 
 ### [HW3](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment3) TurtleBot basic maneuvers and emergency braking maneuvers 
 
