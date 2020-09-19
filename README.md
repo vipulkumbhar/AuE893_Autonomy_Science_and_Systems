@@ -22,18 +22,22 @@ This repository contains the code and assets for Clemson Univeristy course AuE89
 
 ![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/assignment2_ws/video/closedloop_gif.gif)
 
-### [HW3](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment3) TurtleBot basic maneuvers and emergency braking maneuvers 
+### [HW3](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment3) TurtleBot3 basic maneuvers and emergency braking maneuvers 
 
 ![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/git_readme_files/move.gif)
 
-### [HW4](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment4) TurtleBot wall follower and obstacle avoidance, simulation and physical implementation 
+### [HW4](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment4) TurtleBot3 wall follower and obstacle avoidance, simulation and physical implementation 
    
 ![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/assignment4/video/gazebo/wall_following.gif)
 
 ![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/assignment4/video/turtlebot3burger/wallfollowing_real.gif)
 
 
-### [HW5](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/tb3_line_following)   
+### [HW5](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/tb3_line_following) Part 1: Lane detection by camera and lane following by turtlebot3
+
+(https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/tb3_line_following/videos/gifs_for_readme/lane_following_gazebo.GIF)
+
+### Part 2: April tag detection and follower
    
 <pre>
 Script        : /AuE893Spring20_VipulKumbhar/catkin_ws/src/tb3_line_following/script
