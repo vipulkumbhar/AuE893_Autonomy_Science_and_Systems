@@ -26,14 +26,12 @@ This repository contains the code and assets for Clemson Univeristy course AuE89
 
 ![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/git_readme_files/move.gif)
 
-### [HW4](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment4)   
+### [HW4](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/assignment4) TurtleBot wall follower and obstacle avoidance, simulation and physical implementation 
    
-<pre>
-Script 1      : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment4/script
-Script 2      : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment4/src
-Video         : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment4/video  
-Launch files  : /AuE893Spring20_VipulKumbhar/catkin_ws/src/assignment4/launch 
-</pre>
+![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/assignment4/video/gazebo/wall_following.gif)
+
+![Watch the video](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/blob/master/catkin_ws/src/assignment4/video/turtlebot3burger/wallfollowing_real.gif)
+
 
 ### [HW5](https://github.com/vipulkumbhar/AuE893Spring20_VipulKumbhar/tree/master/catkin_ws/src/tb3_line_following)   
    
